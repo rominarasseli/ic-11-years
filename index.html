@@ -175,6 +175,7 @@ img{max-width:100%;display:block}
 .wa button:hover{transform:rotate(0) scale(1.02)}
 .wa img{width:100%;height:auto}
 .wa figcaption{font-family:var(--mono);font-size:12px;letter-spacing:.06em;opacity:.8}
+.voice-2{margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,.18)}
 .voice-foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px;font-family:var(--mono);font-size:13px;letter-spacing:.08em}
 .lang{border:1px solid currentColor;background:transparent;border-radius:99px;padding:6px 14px;font-size:13px;color:inherit}
 
@@ -559,6 +560,10 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
     <p class="quote" id="quote">“Eight years ago I dreamed, two or three times, that I was traveling to another country carrying suitcases, and to me that was crazy. Here in El Salvador, getting a visa is very hard for a young person. Now those dreams come true this Saturday, and I know God put you in my path. Thank you so much.”</p>
     <div class="voice-foot"><span>Marvin · worker from El Salvador · 2023</span><button class="lang" id="lang" aria-pressed="false">Leer en español</button></div>
     <figure class="wa"><button id="wa-open" aria-label="Open Marvin's original WhatsApp message"><img src="img/marvin-msg.png" alt="Marvin's original WhatsApp message in Spanish"></button><figcaption>The original message he sent us on WhatsApp</figcaption></figure>
+    <div class="voice-2">
+      <p class="quote q2" id="quote2">“We want to thank you again for the opportunity and the trust you gave us. We're very happy at our job, making new friends and working hard so we don't let you or our employers down. P.S. Even though the season has started, don't forget about us :)”</p>
+      <div class="voice-foot"><span>Elite Iván &amp; Leticia · workers from Mexico</span><button class="lang" id="lang2" aria-pressed="false">Leer en español</button></div>
+    </div>
   </div>
 </section>
 
@@ -828,6 +833,10 @@ addEventListener("scroll",rail,{passive:true});addEventListener("resize",rail);r
 const EN=$("#quote").textContent;
 const ES="“Personalmente quiero agradecerles una vez más y contarles que hace 8 años yo soñé 2 a 3 veces que viajaba a otro país y veía que llevaba maletas, y eso para mí era una locura, pues aquí en El Salvador no se mencionaban visas de trabajo, y de turista para un joven es bien difícil. Ahora veo que esos sueños se van a cumplir este sábado y sé que Dios los puso a ustedes en mi camino. ¡Muchas gracias!”";
 $("#lang").onclick=e=>{const es=e.target.getAttribute("aria-pressed")!=="true";e.target.setAttribute("aria-pressed",es);$("#quote").textContent=es?ES:EN;e.target.textContent=es?"Read in English":"Leer en español"};
+
+const EN2=$("#quote2").textContent;
+const ES2="“Queremos agradecerles nuevamente la oportunidad y confianza que nos brindaron; estamos muy a gusto en el empleo, haciendo nuevas amistades y trabajando duro para no defraudarlas a ustedes ni a nuestros empleadores. P.D. Aunque ya inició la temporada, no nos olviden :)”";
+$("#lang2").onclick=e=>{const es=e.target.getAttribute("aria-pressed")!=="true";e.target.setAttribute("aria-pressed",es);$("#quote2").textContent=es?ES2:EN2;e.target.textContent=es?"Read in English":"Leer en español"};
 
 /* ---------------- COUNTRIES ---------------- */
 const regions=["All","Americas","Africa","Europe","Middle East","Asia & Oceania"];let reg="All";
