@@ -45,10 +45,17 @@ img{max-width:100%;display:block}
 
 /* ---------- HERO ---------- */
 .hero{padding-block:48px 24px}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.hero h1{font-size:clamp(44px,8vw,96px);font-variation-settings:"wdth" 118;font-weight:800;letter-spacing:-.02em}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:40px;align-items:center}
+.hero h1{font-size:clamp(44px,6.2vw,80px);font-variation-settings:"wdth" 118;font-weight:800;letter-spacing:-.02em}
 .hero h1 .num{color:var(--teal)}
-.hero .lede{margin-top:20px;font-size:20px}
+.hero-lede{margin-top:26px;font-family:var(--display);font-variation-settings:"wdth" 94;font-weight:500;font-size:clamp(21px,2.3vw,27px);line-height:1.5;color:var(--ink);max-width:34ch;text-wrap:pretty}
+.hl-road{position:relative;white-space:nowrap;padding-right:1.1em;background:repeating-linear-gradient(90deg,var(--teal) 0 7px,transparent 7px 12px) left calc(100% - 1px)/100% 2.5px no-repeat}
+.hl-road::after{content:"✈";position:absolute;right:0;bottom:-.12em;font-size:.8em;color:var(--teal);animation:hlfly 3.2s ease-in-out infinite}
+@keyframes hlfly{0%,100%{transform:translate(-3px,1px) rotate(-6deg)}50%{transform:translate(3px,-3px) rotate(-6deg)}}
+.hl-num{color:var(--teal);font-weight:750;background:linear-gradient(transparent 58%,var(--teal-soft) 58%) left/100% 100% no-repeat;padding:0 .12em;animation:hlsweep 1.1s .4s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes hlsweep{from{background-size:0% 100%}to{background-size:100% 100%}}
+.hl-life{display:inline-block;color:var(--stamp);border:2px solid var(--stamp);border-radius:8px;padding:0 .35em;line-height:1.25;transform:rotate(-2.5deg);font-weight:650;animation:hlstamp .5s 1.1s cubic-bezier(.3,1.6,.5,1) backwards}
+@keyframes hlstamp{from{transform:rotate(-12deg) scale(1.35);opacity:0}to{transform:rotate(-2.5deg) scale(1);opacity:1}}
 .team-tag{display:inline-flex;gap:8px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:6px 12px;margin-bottom:22px;color:var(--ink-2)}
 .team-tag i{width:8px;height:8px;border-radius:50%;background:var(--stamp);display:inline-block}
 
@@ -326,7 +333,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
     <div class="hero-grid">
       <div>
         <h1>International Connections turns <span class="num">11</span></h1>
-        <p class="lede">A look back at the road we traveled together, the numbers we built season after season, and the lives that changed because this team showed up.</p>
+        <p class="hero-lede">A look back at <span class="hl-road">the road we traveled</span> together, <span class="hl-num">the numbers we built</span> season after season, and <span class="hl-life">the lives that changed</span> because this team showed&nbsp;up.</p>
       </div>
       <div class="pass" aria-label="Boarding pass: Asunción 2015 to the world 2026">
         <div class="pass-main">
