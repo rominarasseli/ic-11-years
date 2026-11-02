@@ -91,6 +91,7 @@ img{max-width:100%;display:block}
 /* ---------- LETTER ---------- */
 .letter{background:var(--card);border-block:1px solid var(--line)}
 .letter-grid{display:grid;grid-template-columns:220px 1fr;gap:40px}
+.letter-title{font-size:clamp(28px,3.4vw,40px);font-variation-settings:"wdth" 110;font-weight:800;line-height:1.05}
 .letter p+p{margin-top:16px}
 .letter .body{max-width:64ch;font-size:19px}
 .sig{margin-top:24px;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
@@ -378,7 +379,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
 
 <section class="letter">
   <div class="wrap letter-grid">
-    <div class="head" style="margin:0"><h3>Dear IC team,</h3></div>
+    <div class="head" style="margin:0"><h3 class="letter-title">How it all began</h3></div>
     <div class="body">
       <p>Eleven years ago, this office was a small team in Asunción with a big idea that broke the mold and crossed borders. But the story began a few years earlier, when Jessica Martin, our boss lady, took on the challenge of bringing a company based in South Dakota to Paraguay through remote work.</p>
       <p>With the limited technology Paraguay had at the time, it seemed almost impossible. She did it anyway, with a big dream, a lot of hard work and a firm belief: that the right job in the U.S. could change a family's future, that every employer deserved to be connected with the right workers, and that every worker deserved an honest company guiding them, step by step.</p>
