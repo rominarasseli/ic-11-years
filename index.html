@@ -100,7 +100,10 @@ img{max-width:100%;display:block}
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 18px;display:grid;gap:6px;align-content:start}
 .tile .n{font-family:var(--display);font-size:46px;font-weight:800;font-variation-settings:"wdth" 108;line-height:1;font-variant-numeric:tabular-nums}
-.tile p{color:var(--ink-2);font-size:15px;line-height:1.4}
+.tile h3{font-size:19px;margin-top:6px}
+.tile p{color:var(--ink-2);font-size:15px;line-height:1.45}
+.tile-meta{margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.tile{grid-template-rows:auto auto 1fr auto}
 
 /* ---------- CHART ---------- */
 .chart-card{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
@@ -392,9 +395,9 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
   <div class="wrap">
     <div class="head"><span class="eyebrow">How far we've come</span><h2>Our growth in numbers</h2></div>
     <div class="tiles">
-      <div class="tile"><span class="n" data-to="64" data-pre="+" data-suf="%">+64%</span><p>more workers arriving in the U.S. from 2019 to 2022</p></div>
-      <div class="tile"><span class="n" data-to="114" data-pre="+" data-suf="%">+114%</span><p>more applications in a single year (FY23 to FY24)</p></div>
-      <div class="tile"><span class="n" data-to="35" data-suf="+">35+</span><p>countries our workers have come from</p></div>
+      <div class="tile"><span class="n" data-to="64" data-pre="+" data-suf="%">+64%</span><h3>More workers, every season</h3><p>From 1,398 workers in 2019 to 2,288 in 2022 arriving in the U.S. with us.</p><span class="tile-meta">2019 → 2022</span></div>
+      <div class="tile"><span class="n" data-to="114" data-pre="+" data-suf="%">+114%</span><h3>Applications more than doubled</h3><p>From 3,372 to 7,227 people applying with us in just one year.</p><span class="tile-meta">FY2023 → FY2024</span></div>
+      <div class="tile"><span class="n" data-to="35" data-suf="+">35+</span><h3>Countries, one team</h3><p>Our workers have come from more than 35 countries across five regions of the world.</p><span class="tile-meta">Since 2015</span></div>
     </div>
 
     <div class="chart-card">
