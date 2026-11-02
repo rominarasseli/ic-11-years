@@ -249,14 +249,16 @@ img{max-width:100%;display:block}
 .lb p{text-align:center;font-size:15px;margin-top:10px;opacity:.85}
 
 /* ---------- CULTURE ---------- */
-.values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.values{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.val{grid-column:span 2}
+.val:nth-child(n+4){grid-column:span 3}
 .val{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:8px;align-content:start;transition:transform .25s,border-color .25s}
 .val:hover{transform:translateY(-4px);border-color:var(--teal)}
 .val-tag{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stamp);border:1.5px solid var(--stamp);border-radius:5px;padding:3px 8px;transform:rotate(-3deg)}
 .val h3{font-size:20px;margin-top:6px}
 .val p{color:var(--ink-2);font-size:16px;line-height:1.5}
-@media (max-width:860px){.values{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.values{grid-template-columns:1fr}}
+@media (max-width:860px){.values{grid-template-columns:1fr 1fr}.val,.val:nth-child(n+4){grid-column:auto}.val:last-child{grid-column:1/-1}}
+@media (max-width:520px){.values{grid-template-columns:1fr}.val:last-child{grid-column:auto}}
 /* ---------- GIVING BACK ---------- */
 .give{display:grid;grid-template-columns:1fr;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .give-body{padding:32px 32px 8px;display:grid;gap:14px;align-content:center;max-width:70ch}
@@ -557,7 +559,6 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
       <article class="val"><span class="val-tag">Empathy</span><h3>Kind words, always</h3><p>We know that how we say things matters as much as what we say, so we keep everyone in the loop and speak to each other with patience and respect.</p></article>
       <article class="val"><span class="val-tag">Our space</span><h3>We treat the office like home</h3><p>We care for our office the way we'd care for our own house: the garden, the pool, the walls and every piece of equipment. Nothing goes on a wall unless we know it will come off cleanly, we keep the pool clean and we call the gardener when it's needed. And we always do it as a team.</p></article>
       <article class="val"><span class="val-tag">Our pets</span><h3>We look after our furry coworkers</h3><p>Beauty and the office pets have their own routine, and we make sure they're cared for on holidays and long weekends too.</p></article>
-      <article class="val"><span class="val-tag">Teamwork</span><h3>We organize everything together</h3><p>From our celebrations to our campaigns, every event is a team effort.</p></article>
     </div>
   </div>
 </section>
