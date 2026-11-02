@@ -225,6 +225,15 @@ img{max-width:100%;display:block}
 .lb button{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:99px;width:46px;height:46px;font-size:22px}
 .lb p{text-align:center;font-size:15px;margin-top:10px;opacity:.85}
 
+/* ---------- CULTURE ---------- */
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.val{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:8px;align-content:start;transition:transform .25s,border-color .25s}
+.val:hover{transform:translateY(-4px);border-color:var(--teal)}
+.val-tag{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stamp);border:1.5px solid var(--stamp);border-radius:5px;padding:3px 8px;transform:rotate(-3deg)}
+.val h3{font-size:20px;margin-top:6px}
+.val p{color:var(--ink-2);font-size:16px;line-height:1.5}
+@media (max-width:860px){.values{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.values{grid-template-columns:1fr}}
 /* ---------- GIVING BACK ---------- */
 .give{display:grid;grid-template-columns:1fr;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .give-body{padding:32px 32px 8px;display:grid;gap:14px;align-content:center;max-width:70ch}
@@ -511,6 +520,20 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
         <figcaption><b>How it started</b><span>2019</span></figcaption></figure>
       <figure><div class="wall-empty"><span class="xx">XX</span><p>Updated photo of the wall</p></div>
         <figcaption><b>Today</b><span>2026</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="culture" style="padding-top:8px">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">How we work together</span><h2>Our culture</h2><p class="lede">Big numbers come from small habits. These are the things that make IC feel like IC, every single day.</p></div>
+    <div class="values">
+      <article class="val"><span class="val-tag">Individuality</span><h3>We celebrate who you are</h3><p>Everyone brings their own style to the office. We promote acceptance, and we make room for fun.</p></article>
+      <article class="val"><span class="val-tag">Gratitude</span><h3>We always say thank you</h3><p>To each other, to our workers and to our employers. Gratitude is part of every day here.</p></article>
+      <article class="val"><span class="val-tag">Empathy</span><h3>We keep each other in mind</h3><p>It shows in the small things: we let everyone know if we're going to the supermarket or changing the water bottle.</p></article>
+      <article class="val"><span class="val-tag">Our space</span><h3>We take care of our office</h3><p>Our office, our garden, our walls and our equipment. We don't stick anything on a wall unless we know it will come off cleanly.</p></article>
+      <article class="val"><span class="val-tag">Our pets</span><h3>We look after our furry coworkers</h3><p>Beauty and the office pets have their own routine, and we make sure they're cared for on holidays and long weekends too.</p></article>
+      <article class="val"><span class="val-tag">Teamwork</span><h3>We organize everything together</h3><p>From our celebrations to our campaigns, every event is a team effort.</p></article>
     </div>
   </div>
 </section>
