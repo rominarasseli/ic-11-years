@@ -228,8 +228,8 @@ img{max-width:100%;display:block}
 .wall figure{margin:0;display:grid;gap:10px}
 .wall-img{padding:0;border:0;border-radius:12px;overflow:hidden;background:#fff;aspect-ratio:4/5}
 .wall-img img{width:100%;height:100%;object-fit:contain}
-.wall-img.now{aspect-ratio:4/3;background:#111}
-.wall-img.now img{object-fit:cover}
+.wall-img.now{aspect-ratio:auto;background:#111}
+.wall-img.now img{height:auto;object-fit:cover}
 .wall-empty{aspect-ratio:4/5;border:2px dashed var(--line);border-radius:12px;display:grid;place-content:center;justify-items:center;gap:8px;color:var(--ink-2);text-align:center;padding:16px}
 .wall figcaption{display:flex;justify-content:space-between;align-items:baseline}
 .wall figcaption b{font-family:var(--display);font-size:20px;font-variation-settings:"wdth" 100}
@@ -847,7 +847,7 @@ renderQ();
 const FLY=[{f:"animal-day-2",t:"World Animal Day donation drive"},{f:"animal-day",t:"World Animal Day donation drive"},{f:"animal-day-3",t:"World Animal Day donation drive"}];
 const APP=[{f:"app-3",t:"IC Workers Tracker: welcome screen"},{f:"app-1",t:"Manage multiple companies from a single account"},{f:"app-2",t:"Manage multiple contracts and their details"},{f:"app-5",t:"Home: active contracts, paperwork status and case numbers"}];
 document.querySelectorAll("[data-app] button").forEach(b=>b.onclick=()=>openLB(APP,+b.dataset.i));
-const WALL=[{f:"wall-start",t:"How our chalkboard wall started, 2019: built by the team"},{f:"wall-2026",t:"Our chalkboard wall today: Fiscal Year 2026"},{f:"wall-2026-b",t:"Our chalkboard wall today: Fiscal Year 2026"}];
+const WALL=[{f:"wall-start",t:"How our chalkboard wall started, 2019: built by the team"},{f:"wall-2026",t:"Our chalkboard wall today: Fiscal Year 2026"}];
 document.querySelector("[data-wall]").onclick=()=>openLB(WALL,0);
 document.querySelector("[data-wall-now]").onclick=()=>openLB(WALL,1);
 const CHARTER=[{f:"charter-1",t:"Our H-2A workers on a charter flight, 2020"},{f:"charter-2",t:"On board the charter flight, 2020"}];
