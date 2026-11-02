@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>International Connections at 11</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: one long "travel log" — boarding-pass hero, then sections like pages of a passport, each stamped with its year. */
+:root{
+  --paper:#f4f6f8; --card:#ffffff; --ink:#13294b; --ink-2:#4a5970; --line:#d6dde6;
+  --teal:#1d8a8d; --teal-soft:#d5ecec; --stamp:#c2412d; --xx:#ffe98a; --xx-ink:#13294b;
+  --ink-red:#c2412d; --ink-blue:#2557a7; --ink-violet:#6b3fa0; --ink-green:#2e7d4f; --ink-black:#2b2f36;
+  --voice-bg:#13294b; --voice-fg:#f4f6f8; --voice-accent:#8fd6d8;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0c1626; --card:#13223a; --ink:#e8eef6; --ink-2:#a5b3c6; --line:#263a5a;
+  --teal:#5cc4c6; --teal-soft:#16393f; --stamp:#f07a63; --xx:#6b5a12; --xx-ink:#fff6c8; --ink-red:#f07a63; --ink-blue:#7aa7f0; --ink-violet:#b892e8; --ink-green:#6cc795; --ink-black:#c9d1dc; --voice-bg:#13223a; --voice-fg:#e8eef6; --voice-accent:#5cc4c6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0c1626; --card:#13223a; --ink:#e8eef6; --ink-2:#a5b3c6; --line:#263a5a;
+  --teal:#5cc4c6; --teal-soft:#16393f; --stamp:#f07a63; --xx:#6b5a12; --xx-ink:#fff6c8; --ink-red:#f07a63; --ink-blue:#7aa7f0; --ink-violet:#b892e8; --ink-green:#6cc795; --ink-black:#c9d1dc; --voice-bg:#13223a; --voice-fg:#e8eef6; --voice-accent:#5cc4c6; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:72px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+h2{font-size:clamp(32px,5vw,52px);font-variation-settings:"wdth" 112;font-weight:750;letter-spacing:-.01em}
+h3{font-size:22px;font-variation-settings:"wdth" 100;font-weight:700}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:500}
+.lede{color:var(--ink-2);max-width:62ch}
+.head{display:grid;gap:12px;margin-bottom:36px}
+.xx{background:var(--xx);color:var(--xx-ink);padding:0 .3em;border-radius:3px;font-family:var(--mono);font-size:.9em;white-space:nowrap}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+img{max-width:100%;display:block}
+
+/* ---------- HERO ---------- */
+.hero{padding-block:48px 24px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(44px,8vw,96px);font-variation-settings:"wdth" 118;font-weight:800;letter-spacing:-.02em}
+.hero h1 .num{color:var(--teal)}
+.hero .lede{margin-top:20px;font-size:20px}
+.team-tag{display:inline-flex;gap:8px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:6px 12px;margin-bottom:22px;color:var(--ink-2)}
+.team-tag i{width:8px;height:8px;border-radius:50%;background:var(--stamp);display:inline-block}
+
+.pass{background:var(--card);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:1fr auto;overflow:hidden;box-shadow:0 18px 40px -24px rgba(19,41,75,.45);transform:rotate(-1.5deg)}
+.pass-main{padding:22px 22px 18px;display:grid;gap:16px;min-width:0}
+.pass-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.route{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px}
+.route b{font-family:var(--display);font-size:46px;font-variation-settings:"wdth" 110;line-height:1}
+.route small{display:block;font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.08em}
+.route .line{height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px);position:relative}
+.route .line::after{content:"✈";position:absolute;left:50%;top:50%;transform:translate(-50%,-55%);color:var(--teal);font-size:20px;background:var(--card);padding:0 6px}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-top:1px dashed var(--line);padding-top:14px}
+.fields span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.fields strong{font-family:var(--display);font-size:18px;font-variation-settings:"wdth" 100}
+.stub{border-left:2px dashed var(--line);padding:22px 16px;display:grid;place-items:center;background:var(--teal-soft)}
+.stub span{writing-mode:vertical-rl;font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal)}
+
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-top:40px}
+.strip img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+
+/* ---------- LETTER ---------- */
+.letter{background:var(--card);border-block:1px solid var(--line)}
+.letter-grid{display:grid;grid-template-columns:220px 1fr;gap:40px}
+.letter p+p{margin-top:16px}
+.letter .body{max-width:64ch;font-size:19px}
+.sig{margin-top:24px;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+
+/* ---------- NUMBERS ---------- */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 18px;display:grid;gap:6px;align-content:start}
+.tile .n{font-family:var(--display);font-size:46px;font-weight:800;font-variation-settings:"wdth" 108;line-height:1;font-variant-numeric:tabular-nums}
+.tile p{color:var(--ink-2);font-size:15px;line-height:1.4}
+
+/* ---------- CHART ---------- */
+.chart-card{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tab{border:1px solid var(--line);background:transparent;border-radius:99px;padding:8px 14px;font-size:15px}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chart-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;align-items:baseline;margin-bottom:8px}
+.chart-meta h3{font-size:20px}
+.chart-meta .growth{font-family:var(--mono);font-size:14px;color:var(--teal)}
+.chart-box{overflow-x:auto}
+#chart{width:100%;min-width:480px;height:auto;display:block}
+#chart text{font-family:var(--mono);font-size:12px;fill:var(--ink-2)}
+#chart .val{fill:var(--ink);font-weight:500}
+#chart .bar{fill:var(--teal);transition:opacity .2s}
+#chart .bar.last{fill:var(--ink)}
+#chart .ghost{fill:none;stroke:var(--ink-2);stroke-dasharray:4 4}
+#chart .grid{stroke:var(--line)}
+#chart .chg{fill:var(--teal);font-size:11px}
+.chart-note{font-size:14px;color:var(--ink-2);margin-top:10px}
+
+/* ---------- TIMELINE ---------- */
+.timeline{position:relative;display:grid;gap:28px;padding-left:44px}
+.rail{position:absolute;left:14px;top:6px;bottom:6px;width:3px;background:var(--line);border-radius:3px}
+.rail i{position:absolute;inset:0 0 auto 0;height:0;background:var(--teal);border-radius:3px}
+.m{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;grid-template-columns:150px 1fr;gap:24px}
+.m::before{content:"";position:absolute;left:-37px;top:30px;width:13px;height:13px;border-radius:50%;background:var(--card);border:3px solid var(--teal)}
+.stamp{align-self:start;justify-self:start;border:2.5px solid var(--stamp);color:var(--stamp);border-radius:8px;padding:8px 12px;transform:rotate(-6deg);text-align:center;font-family:var(--mono);line-height:1.1}
+.stamp b{display:block;font-family:var(--display);font-size:34px;font-variation-settings:"wdth" 100;font-weight:800;letter-spacing:.02em}
+.stamp small{font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.m-body{display:grid;gap:12px;min-width:0}
+.m-body p{color:var(--ink-2)}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:4px}
+.thumbs button{position:relative;padding:0;border:0;border-radius:8px;overflow:hidden;background:var(--line);aspect-ratio:4/3}
+.thumbs img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.thumbs button:hover img{transform:scale(1.05)}
+.thumbs em{position:absolute;left:5px;bottom:5px;background:rgba(10,20,36,.75);color:#fff;font-style:normal;font-family:var(--mono);font-size:11px;padding:2px 6px;border-radius:4px}
+.fbgrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px}
+.fbgrow div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:grid}
+.fbgrow span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.fbgrow b{font-family:var(--display);font-size:26px;font-variation-settings:"wdth" 106;font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink)}
+.fbgrow .now{background:var(--teal-soft);border-color:var(--teal)}
+.fbgrow .now b{color:var(--teal)}
+.fbgrow i{flex:0 0 24px;height:2px;background:var(--teal);position:relative}
+.fbgrow i::after{content:"";position:absolute;right:-2px;top:-4px;border:5px solid transparent;border-left-color:var(--teal)}
+.app{margin-top:6px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:14px}
+.app-id{display:flex;gap:12px;align-items:center}
+.app-id img{width:52px;height:52px;border-radius:12px}
+.app-id b{display:block;font-family:var(--display);font-size:19px;font-variation-settings:"wdth" 100}
+.app-id span{font-size:14px;color:var(--ink-2)}
+.phones{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.phones button{padding:0;border:0;background:none;border-radius:14px;overflow:hidden;box-shadow:0 10px 22px -14px rgba(19,41,75,.6);transition:transform .25s}
+.phones button:hover{transform:translateY(-4px)}
+.phones img{width:100%;height:auto}
+@media (max-width:520px){.phones{grid-template-columns:repeat(4,70%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.phones button{scroll-snap-align:start}}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:460px}
+.pair button{padding:0;border:0;border-radius:10px;overflow:hidden;background:var(--line);aspect-ratio:3/4}
+.pair img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.pair button:hover img{transform:scale(1.04)}
+.photo-slot{aspect-ratio:16/9;max-width:460px;border:2px dashed var(--line);border-radius:12px;display:grid;place-content:center;justify-items:center;gap:8px;color:var(--ink-2);text-align:center;padding:16px}
+.m.now{border-color:var(--ink)}
+.m.now .stamp{border-color:var(--ink);color:var(--ink)}
+
+/* ---------- VOICE ---------- */
+.voice{background:var(--voice-bg);color:var(--voice-fg)}
+.voice .eyebrow{color:var(--voice-accent)}
+.quote{font-family:var(--display);font-variation-settings:"wdth" 92;font-size:clamp(24px,3.4vw,38px);font-weight:500;line-height:1.3;max-width:30ch;margin-top:16px}
+.wa{margin:28px 0 0;max-width:560px;display:grid;gap:8px}
+.wa button{padding:0;border:0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 26px -14px rgba(0,0,0,.6);transform:rotate(-1deg);transition:transform .25s}
+.wa button:hover{transform:rotate(0) scale(1.02)}
+.wa img{width:100%;height:auto}
+.wa figcaption{font-family:var(--mono);font-size:12px;letter-spacing:.06em;opacity:.8}
+.voice-foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px;font-family:var(--mono);font-size:13px;letter-spacing:.08em}
+.lang{border:1px solid currentColor;background:transparent;border-radius:99px;padding:6px 14px;font-size:13px;color:inherit}
+
+/* ---------- COUNTRIES ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px 6px 6px;font-size:16px}
+.chip code{font-family:var(--mono);font-size:11px;background:var(--teal-soft);color:var(--teal);border-radius:4px;padding:3px 5px;font-weight:500}
+.chip.big{border-color:var(--teal);font-weight:600}
+.count{font-family:var(--mono);color:var(--ink-2);font-size:14px;margin-left:4px}
+
+/* ---------- TRAVEL STAMPS ---------- */
+.stamps{display:flex;flex-wrap:wrap;gap:22px 26px;padding:8px 4px;align-items:center}
+.ps{--c:var(--ink-red);color:var(--c);border:2.5px solid var(--c);font-family:var(--mono);text-align:center;line-height:1.15;background:var(--card);display:grid;justify-items:center;align-content:center;gap:3px;padding:10px 14px;position:relative;transition:transform .25s;opacity:.93}
+.ps:nth-child(4n+1){transform:rotate(-6deg)}
+.ps:nth-child(4n+2){transform:rotate(4deg)}
+.ps:nth-child(4n+3){transform:rotate(-2deg)}
+.ps:nth-child(4n){transform:rotate(7deg)}
+.ps:hover{transform:rotate(0) scale(1.07);opacity:1}
+.ps small{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}
+.ps b{font-family:var(--display);font-size:19px;font-variation-settings:"wdth" 92;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.ps .ap{font-size:13px;font-weight:500;letter-spacing:.08em}
+.ps .loc{font-size:15px;font-weight:500}
+.ps.rect{border-radius:4px}
+.ps.double{border-radius:3px;outline:2px solid var(--c);outline-offset:3px}
+.ps.circle{border-radius:50%;width:138px;height:138px;padding:14px}
+.ps.circle::after{content:"";position:absolute;inset:6px;border:1px dashed var(--c);border-radius:50%}
+.ps.oval{border-radius:50%;width:176px;height:118px;padding:12px 20px}
+.ps.schengen{border-radius:12px;grid-template-columns:auto 1fr;justify-items:start;text-align:left;column-gap:10px;padding:10px 14px}
+.ps.schengen .eu{grid-row:span 4;width:44px;height:44px;border-radius:50%;border:2px dotted var(--c);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:20px;font-style:normal}
+.ps.circle b{font-size:16px}
+@media (max-width:520px){.stamps{gap:14px 12px;justify-content:center}.ps{padding:8px 10px}.ps small{font-size:8px;letter-spacing:.1em}.ps b{font-size:15px}.ps.circle{width:112px;height:112px}.ps.circle b{font-size:13px}.ps.oval{width:140px;height:96px}.ps.schengen .eu{width:34px;height:34px;font-size:15px}}
+.red{--c:var(--ink-red)}.blue{--c:var(--ink-blue)}.violet{--c:var(--ink-violet)}.green{--c:var(--ink-green)}.black{--c:var(--ink-black)}
+.more-wrap{flex-basis:100%;display:flex;justify-content:center;margin-top:18px}
+.tstamp{font-family:var(--mono);text-align:center;line-height:1.15;background:var(--card)}
+.tstamp b{display:block;font-family:var(--display);font-weight:800;text-transform:uppercase}
+.tstamp.more{border-style:dashed;border-width:3px;border-color:var(--teal);color:var(--teal);transform:rotate(-2deg);padding:22px 40px;border-radius:16px;display:grid;justify-items:center;gap:6px}
+.tstamp.more b{font-size:clamp(28px,5vw,44px);font-variation-settings:"wdth" 110;margin:0}
+.tstamp.more small{font-size:12px}
+.tstamp.more .plane{font-size:40px;line-height:1;display:inline-block;animation:fly 3s ease-in-out infinite}
+@keyframes fly{0%,100%{transform:translate(-6px,2px) rotate(-8deg)}50%{transform:translate(6px,-4px) rotate(-8deg)}}
+/* ---------- VIDEOS ---------- */
+.videos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.video figure{margin:0}
+.video video{width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;display:block}
+.video figcaption{margin-top:10px;display:grid;gap:2px}
+.video figcaption span{color:var(--ink-2);font-size:15px}
+
+/* ---------- WALL ---------- */
+.wall{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px}
+.wall figure{margin:0;display:grid;gap:10px}
+.wall-img{padding:0;border:0;border-radius:12px;overflow:hidden;background:#fff;aspect-ratio:4/5}
+.wall-img img{width:100%;height:100%;object-fit:contain}
+.wall-empty{aspect-ratio:4/5;border:2px dashed var(--line);border-radius:12px;display:grid;place-content:center;justify-items:center;gap:8px;color:var(--ink-2);text-align:center;padding:16px}
+.wall figcaption{display:flex;justify-content:space-between;align-items:baseline}
+.wall figcaption b{font-family:var(--display);font-size:20px;font-variation-settings:"wdth" 100}
+.wall figcaption span{font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+@media (max-width:620px){.wall{grid-template-columns:1fr}}
+/* ---------- GALLERY ---------- */
+.gallery{columns:3 260px;column-gap:12px}
+.gallery button{display:block;width:100%;margin:0 0 12px;padding:0;border:0;border-radius:10px;overflow:hidden;background:var(--line);break-inside:avoid;position:relative}
+.gallery img{width:100%;height:auto;transition:transform .35s}
+.gallery button:hover img{transform:scale(1.03)}
+.gallery button span{position:absolute;left:8px;bottom:8px;background:rgba(10,20,36,.72);color:#fff;font-size:12px;font-family:var(--mono);padding:3px 8px;border-radius:4px;letter-spacing:.04em}
+
+.lb{position:fixed;inset:0;z-index:50;background:rgba(6,12,22,.92);display:grid;grid-template-rows:auto 1fr auto;padding:calc(12px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));color:#fff}
+.lb[hidden]{display:none}
+.lb-top{display:flex;justify-content:flex-end}
+.lb-stage{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;min-height:0}
+.lb-stage img{max-height:78vh;max-width:100%;margin:auto;border-radius:8px;object-fit:contain}
+.lb button{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:99px;width:46px;height:46px;font-size:22px}
+.lb p{text-align:center;font-size:15px;margin-top:10px;opacity:.85}
+
+/* ---------- GIVING BACK ---------- */
+.give{display:grid;grid-template-columns:1fr;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.give-body{padding:32px 32px 8px;display:grid;gap:14px;align-content:center;max-width:70ch}
+.give-oct{display:grid;grid-template-columns:1fr 1.7fr;gap:28px;align-items:center;padding:28px 32px 32px;border-top:1px dashed var(--line);background:var(--paper)}
+.oct-text{display:grid;gap:10px}
+.oct-text p{color:var(--ink-2)}
+.flyers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.flyer{padding:0;border:0;background:none;border-radius:12px;overflow:hidden;box-shadow:0 14px 30px -18px rgba(19,41,75,.6);transition:transform .25s}
+.flyer:nth-child(1){transform:rotate(-2deg)}
+.flyer:nth-child(2){transform:rotate(2deg)}
+.flyer:nth-child(3){transform:rotate(-1deg)}
+.flyer:hover{transform:rotate(0) scale(1.03)}
+.flyer img{width:100%;height:auto}
+@media (max-width:760px){.give-oct{grid-template-columns:1fr;padding:24px 20px}}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:20px 32px 32px}
+.cats figure.feat{grid-column:span 2;grid-row:span 2;grid-template-rows:1fr auto}
+.feat-img{position:relative;min-height:0}
+.feat-img>img{width:100%;height:100%;aspect-ratio:auto!important;object-fit:cover;border-radius:12px}
+.give{position:relative}
+.pstamp-wrap{position:absolute;top:30px;right:40px;z-index:2;transform:rotate(6deg);filter:drop-shadow(0 6px 10px rgba(19,41,75,.35))}
+.pstamp{display:block;width:130px;padding:10px;background:#fbf8f1;
+  -webkit-mask:radial-gradient(circle 4px,#0000 96%,#000) -5px -5px/10px 10px repeat,linear-gradient(#000 0 0) content-box;-webkit-mask-composite:source-over;
+  mask:radial-gradient(circle 4px,#0000 96%,#000) -5px -5px/10px 10px repeat,linear-gradient(#000 0 0) content-box;mask-composite:add}
+.pstamp img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:0!important;display:block;border:1px solid #e5e5e5}
+.cats figure{margin:0;display:grid;gap:8px}
+.cats img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;background:#fff}
+.cats figcaption{font-family:var(--display);font-size:20px;font-weight:700;font-variation-settings:"wdth" 100}
+@media (max-width:520px){.cats figure.feat{grid-row:span 1}.feat-img>img{aspect-ratio:1/1!important}.pstamp{width:80px;padding:7px}.pstamp-wrap{top:18px;right:16px}.cats{grid-template-columns:1fr 1fr;padding:16px 20px 24px}.give-body{padding:24px 20px 4px}}
+.give-body p{color:var(--ink-2)}
+
+/* ---------- QUIZ ---------- */
+.quiz{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;gap:20px;max-width:760px}
+.q-prog{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+.q-kind{color:var(--teal);font-weight:500;text-transform:uppercase;letter-spacing:.1em}
+.q-bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.q-bar i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.q-text{font-family:var(--display);font-size:26px;font-variation-settings:"wdth" 100;font-weight:700;line-height:1.2}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;font-size:17px}
+.opt:hover:not(:disabled){border-color:var(--teal)}
+.opt.right{border-color:var(--teal);background:var(--teal-soft)}
+.opt.wrong{border-color:var(--stamp);opacity:.8}
+.opt:disabled{cursor:default}
+.q-fb{min-height:1.6em;color:var(--ink-2)}
+.q-actions{display:flex;justify-content:flex-end}
+.primary{background:var(--ink);color:var(--paper);border:0;border-radius:99px;padding:12px 22px;font-weight:600}
+
+/* ---------- CLOSING ---------- */
+.closing{text-align:left}
+.closing h2{font-size:clamp(34px,6vw,68px);max-width:18ch}
+.closing-row{display:flex;flex-direction:column-reverse;align-items:center;text-align:center;gap:24px}
+.closing h2{margin-inline:auto}
+.closing .lede{margin-inline:auto;text-align:center}
+.ic-logo{flex:0 0 auto;width:clamp(110px,16vw,190px);height:auto}
+.ic-logo .lg-side{fill:#a6a8ab}
+.ic-logo .lg-mid{fill:var(--ink);stroke:var(--paper);stroke-width:2.5}
+@media (max-width:620px){.ic-logo{width:96px}}
+.closing h2 em{font-style:normal;color:var(--teal)}
+.closing .lede{margin-top:24px;font-size:20px}
+footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mono);font-size:12px;color:var(--ink-2);letter-spacing:.06em}
+
+@media (max-width:860px){
+  .hero-grid,.letter-grid,.give{grid-template-columns:1fr}
+  .tiles{grid-template-columns:1fr}
+  .videos{grid-template-columns:1fr}
+  .m{grid-template-columns:1fr;gap:14px}
+  .pass{transform:none}
+  .strip{grid-template-columns:1fr 1fr}
+  .strip img:first-child{grid-column:1/-1}
+  .strip img{height:170px}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  section{padding-block:52px}
+  .opts{grid-template-columns:1fr}
+  .route b{font-size:34px}
+  .fields{grid-template-columns:1fr 1fr}
+  .timeline{padding-left:30px}
+  .rail{left:6px}
+  .m::before{left:-31px}
+  .tile .n{font-size:36px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>International Connections turns <span class="num">11</span></h1>
+        <p class="lede">A look back at the road we traveled together, the numbers we built season after season, and the lives that changed because this team showed up.</p>
+      </div>
+      <div class="pass" aria-label="Boarding pass: Asunción 2015 to the world 2026">
+        <div class="pass-main">
+          <div class="pass-top"><span>International Connections</span><span>Flight IC 011</span></div>
+          <div class="route">
+            <div><b>ASU</b><small>Asunción · 2015</small></div>
+            <div class="line"></div>
+            <div style="text-align:right"><b>WLD</b><small>The world · 2026</small></div>
+          </div>
+          <div class="fields">
+            <div><span>Passengers</span><strong>Thousands</strong></div>
+            <div><span>Countries</span><strong>35+</strong></div>
+            <div><span>Seasons</span><strong>11</strong></div>
+            <div><span>Crew</span><strong>Our team</strong></div>
+            <div><span>Gate</span><strong>Every season</strong></div>
+            <div><span>Class</span><strong>H-2A · H-2B</strong></div>
+          </div>
+        </div>
+        <div class="stub"><span>Boarding · 11 yrs</span></div>
+      </div>
+    </div>
+    <div class="strip">
+      <img src="img/session-4.jpg" alt="Candidates at one of our information sessions">
+      <img src="img/workers-dinner.jpg" alt="Workers sharing a meal in the U.S.">
+      <img src="img/workers-passports.jpg" alt="Workers holding their passports and boarding passes">
+    </div>
+  </div>
+</header>
+
+<section class="letter">
+  <div class="wrap letter-grid">
+    <div class="head" style="margin:0"><h3>Dear IC team,</h3></div>
+    <div class="body">
+      <p>Eleven years ago, this office was a small team in Asunción with a big idea that broke the mold and crossed borders.</p>
+      <p>The idea began a few years earlier, when Jessica Martin took on the challenge of bringing remote work to Paraguay. With the country's limited technology at the time, it seemed almost impossible, but she did it with a big dream and a lot of hard work, and with the firm belief that the right job in the U.S. could change a family's future, and that every worker deserved someone guiding them, step by step.</p>
+      <p>Every number on this page started with one of you answering a call, reviewing a document, chasing an appointment or staying late in the middle of a season. This is your story as much as the company's.</p>
+    </div>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">How far we've come</span><h2>Our growth in numbers</h2></div>
+    <div class="tiles">
+      <div class="tile"><span class="n" data-to="64" data-pre="+" data-suf="%">+64%</span><p>more workers arriving in the U.S. from 2019 to 2022</p></div>
+      <div class="tile"><span class="n" data-to="114" data-pre="+" data-suf="%">+114%</span><p>more applications in a single year (FY23 to FY24)</p></div>
+      <div class="tile"><span class="n" data-to="35" data-suf="+">35+</span><p>countries our workers have come from</p></div>
+    </div>
+
+    <div class="chart-card">
+      <div class="tabs" role="tablist" aria-label="Choose a metric">
+        <button class="tab" role="tab" aria-selected="true" data-k="workers" id="tab-workers">Workers arrived</button>
+        <button class="tab" role="tab" aria-selected="false" data-k="sa" id="tab-sa">South Africa applications</button>
+        <button class="tab" role="tab" aria-selected="false" data-k="apps" id="tab-apps">All applications</button>
+        <button class="tab" role="tab" aria-selected="false" data-k="companies" id="tab-companies">Companies recruiting</button>
+      </div>
+      <div class="chart-meta"><h3 id="chart-title">Workers who arrived in the U.S. with us</h3><span class="growth" id="chart-growth"></span></div>
+      <div class="chart-box"><svg id="chart" viewBox="0 0 800 300" role="img" aria-label="Bar chart"></svg></div>
+      <p class="chart-note" id="chart-note"></p>
+    </div>
+  </div>
+</section>
+
+<section id="road" style="padding-top:24px">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">The road we traveled</span><h2>Milestones</h2><p class="lede">Tap any photo to see it bigger.</p></div>
+    <div class="timeline" id="timeline">
+      <div class="rail"><i id="rail-fill"></i></div>
+
+      <article class="m">
+        <div class="stamp"><small>Departure</small><b>2015</b><small>Asunción</small></div>
+        <div class="m-body"><h3>Where it all began</h3>
+          <p>We opened our doors in Asunción, Paraguay, with a small team and a lot of determination to connect workers with U.S. employers who needed them.</p></div>
+      </article>
+
+      <article class="m">
+        <div class="stamp"><small>Entry</small><b>2017</b></div>
+        <div class="m-body"><h3>Going global</h3>
+          <p>Our job offers reached farmers in South Africa, sheepherders in Mexico and truck drivers in Puerto Rico through local newspapers and magazines. We also held recruitment events in South Africa, meeting candidates face to face, with banners, brochures and IC caps ready on every table.</p>
+          <p>Long before design tools were easy to use and long before AI, this team designed everything by hand: application forms, PDF application templates, flyers, infographics and our yearly reports. We built a new online application system so every candidate lived in one place.</p>
+          <div class="thumbs" data-set="2017"></div></div>
+      </article>
+
+      <article class="m">
+        <div class="stamp"><small>Community</small><b>2019</b><small>10K</small></div>
+        <div class="m-body"><h3>From 2,624 to 90,000+ followers</h3>
+          <p>Our Facebook page grew with every season. Word of mouth became our strongest recruiter, and in 2019 we passed 10,000 followers. That season, 1,398 workers arrived in the U.S. with us. Today more than 90,000 people follow us.</p>
+          <div class="fbgrow" aria-label="Facebook followers over time">
+            <div><span>Sep 2017</span><b>2,624</b></div>
+            <i></i>
+            <div><span>Dec 2019</span><b>10,000</b></div>
+            <i></i>
+            <div class="now"><span>Today</span><b>90,000+</b></div>
+          </div>
+          <div class="thumbs" data-set="2019"></div></div>
+      </article>
+
+      <article class="m">
+        <div class="stamp"><small>Charter</small><b>2020</b><small>H-2A</small></div>
+        <div class="m-body"><h3>Charter flights in a closed world</h3>
+          <p>When the pandemic grounded the world, we didn't stop. Our H-2A workers traveled to the U.S. on charter flights (<span class="xx">XX</span> flights, <span class="xx">XX</span> workers) so farms could keep running and families could keep earning. Even that year, 1,489 workers arrived, more than the year before.</p>
+          <div class="pair" data-pair>
+            <button data-i="0" aria-label="Open photo: workers on the charter flight"><img src="img/charter-1.jpg" alt="Workers seated on the charter flight with crew in protective suits"></button>
+            <button data-i="1" aria-label="Open photo: a worker on board"><img src="img/charter-2.jpg" alt="A worker in a mask on board the charter flight"></button>
+          </div>
+          <div class="thumbs" data-set="2020"></div></div>
+      </article>
+
+      <article class="m">
+        <div class="stamp"><small>Record</small><b>2022</b><small>32 countries</small></div>
+        <div class="m-body"><h3>Still growing</h3>
+          <p>2,288 workers from 32 countries arrived in the U.S., and 185 companies asked us to recruit for them, up from 110 the year before. Our visa denial rate stayed under 3%.</p></div>
+      </article>
+
+      <article class="m">
+        <div class="stamp"><small>New route</small><b>2023</b><small>El Salvador</small></div>
+        <div class="m-body"><h3>New doors open in Central America</h3>
+          <p><span class="xx">XX</span> workers arrived in the U.S. El Salvador became our top recruiting country, with more than half of the 443 new workers we placed. Applications from South Africa grew 73% in one year.</p>
+          <div class="thumbs" data-set="2023"></div></div>
+      </article>
+
+      <article class="m">
+        <div class="stamp"><small>Demand</small><b>2024</b><small>7,227 apps</small></div>
+        <div class="m-body"><h3>7,227 people knocked on our door</h3>
+          <p>Applications more than doubled in one year, from Mexico, El Salvador, Nicaragua, Jamaica, Honduras and well beyond. 1,433 returning workers chose to travel with us again, and <span class="xx">XX</span> workers arrived in total.</p>
+</div>
+      </article>
+
+      <article class="m now">
+        <div class="stamp"><small>Today</small><b>2026</b><small>Our app</small></div>
+        <div class="m-body"><h3>From handmade forms to IC Workers Tracker</h3>
+          <p>The team that once built every form by hand now has its own app. With <b>IC Workers Tracker</b>, available on the App Store, employers can manage multiple companies and contracts from a single account, check each case's paperwork status and case numbers, and follow their workers' process right from their phones.</p>
+          <p>In 2026, <span class="xx">XX</span> workers arrived with us. Eleven years in, we're still building.</p>
+          <div class="app">
+            <div class="app-id"><img src="img/app-icon.jpg" alt="IC Workers Tracker app icon"><div><b>IC Workers Tracker</b><span>Business · Free · by International Connections</span></div></div>
+            <div class="phones" data-app>
+              <button data-i="0" aria-label="Open app screen: welcome"><img src="img/app-3.jpg" alt="IC Workers Tracker welcome screen"></button>
+              <button data-i="1" aria-label="Open app screen: manage companies"><img src="img/app-1.jpg" alt="Manage multiple companies from a single account"></button>
+              <button data-i="2" aria-label="Open app screen: manage contracts"><img src="img/app-2.jpg" alt="Manage multiple contracts and their details"></button>
+              <button data-i="3" aria-label="Open app screen: home"><img src="img/app-5.jpg" alt="Home screen with an active contract and its paperwork status"></button>
+            </div>
+          </div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="wrap">
+    <span class="eyebrow">Why we do this</span>
+    <p class="quote" id="quote">“Eight years ago I dreamed, two or three times, that I was traveling to another country carrying suitcases, and to me that was crazy. Here in El Salvador, getting a visa is very hard for a young person. Now those dreams come true this Saturday, and I know God put you in my path. Thank you so much.”</p>
+    <div class="voice-foot"><span>Marvin · worker from El Salvador · 2023</span><button class="lang" id="lang" aria-pressed="false">Leer en español</button></div>
+    <figure class="wa"><button id="wa-open" aria-label="Open Marvin's original WhatsApp message"><img src="img/marvin-msg.png" alt="Marvin's original WhatsApp message in Spanish"></button><figcaption>The original message he sent us on WhatsApp</figcaption></figure>
+  </div>
+</section>
+
+<section id="countries">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">One team, many flags</span><h2>Countries we've worked with</h2><p class="lede">Workers from every one of these countries traveled to the U.S. through our office. Filter by region.</p></div>
+    <div class="filters" id="region-filters"></div>
+    <div class="chips" id="chips"></div>
+  </div>
+</section>
+
+<section id="travels" style="padding-top:8px">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Our office on the road</span><h2>Where our team has traveled</h2><p class="lede">Our work doesn't stop at the office door. Over the years, our team has traveled to meet candidates, employers and partners, and to learn from the places our workers come from.</p></div>
+    <div class="stamps" id="stamps"></div>
+  </div>
+</section>
+
+<section id="videos" style="padding-top:24px">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Watch</span><h2>Behind the scenes</h2></div>
+    <div class="videos">
+      <div class="video"><figure>
+        <video controls preload="metadata" poster="img/poster-office.jpg" playsinline><source src="videos/office-2017.mp4" type="video/mp4"></video>
+        <figcaption><h3>Inside our office</h3><span>A walk through the house we worked from in 2017.</span></figcaption></figure></div>
+      <div class="video"><figure>
+        <video controls preload="metadata" poster="img/poster-team.jpg" playsinline><source src="videos/team-2018.mp4" type="video/mp4"></video>
+        <figcaption><h3>Our team on camera</h3><span>Highlights from our October 31, 2018 video, with the team dressed up as some of the jobs our workers do.</span></figcaption></figure></div>
+    </div>
+  </div>
+</section>
+
+<section id="wall" style="padding-top:8px">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Our office, then and now</span><h2>The chalkboard wall</h2><p class="lede">Our chalkboard wall was built by the team itself: measuring, cutting and putting it up by hand. Over the years it has grown with us.</p></div>
+    <div class="wall">
+      <figure><button class="wall-img" data-wall aria-label="Open photo: the team building the chalkboard wall"><img src="img/wall-start.jpg" alt="Team members measuring, cutting and putting up the chalkboard wall"></button>
+        <figcaption><b>How it started</b><span>2019</span></figcaption></figure>
+      <figure><div class="wall-empty"><span class="xx">XX</span><p>Updated photo of the wall</p></div>
+        <figcaption><b>Today</b><span>2026</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="give" style="padding-top:24px">
+  <div class="wrap">
+    <div class="give">
+      <div class="give-body">
+        <span class="eyebrow">Giving back</span>
+        <h2 style="font-size:clamp(28px,4vw,40px)">Caring beyond the office</h2>
+        <p>Over the years, we have rescued, spayed and neutered animals and helped them find a home. It's not a one-time campaign: caring for animals is a big part of who we are as a team.</p>
+        <p>Some of the friends we've cared for along the way:</p>
+      </div>
+      <div class="cats">
+        <figure class="feat"><div class="feat-img"><img src="img/kali-2.jpg" alt="Kali, a black cat wearing her name tag"></div><figcaption>Kali</figcaption></figure>
+        <figure><img src="img/beauty.jpg" alt="Beauty, a tabby cat on an office desk"><figcaption>Beauty</figcaption></figure>
+        <figure><img src="img/chino.jpg" alt="Chino, a black and white cat lying on the patio"><figcaption>Chino</figcaption></figure>
+        <figure><img src="img/dog-office.jpg" alt="Petra, a black puppy with a green collar sitting on an office desk"><figcaption>Petra</figcaption></figure>
+        <figure><img src="img/dogs-garden.jpg" alt="Lucy and Petra with pink bows sitting on the grass"><figcaption>Lucy &amp; Petra</figcaption></figure>
+      </div>
+      <div class="give-oct">
+        <div class="oct-text">
+          <span class="eyebrow">Every October</span>
+          <h3>World Animal Day</h3>
+          <p>Every October, for World Animal Day, we collect donations for shelters and rescue groups. Every year we support different ones, trying to reach as many as we can across the country.</p>
+        </div>
+        <div class="flyers">
+          <button class="flyer" data-i="0" aria-label="Open World Animal Day flyer 1"><img src="img/animal-day-2.jpg" alt="World Animal Day donation flyer"></button>
+          <button class="flyer" data-i="1" aria-label="Open World Animal Day flyer 2"><img src="img/animal-day.jpg" alt="World Animal Day donation flyer"></button>
+          <button class="flyer" data-i="2" aria-label="Open World Animal Day flyer 3"><img src="img/animal-day-3.jpg" alt="World Animal Day donation flyer"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz-sec">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Your turn</span><h2>How well do you know IC?</h2><p class="lede">Nine questions about our numbers and our culture. Let's see who really knows IC.</p></div>
+    <div class="quiz" id="quiz" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="closing" style="padding-top:24px">
+  <div class="wrap">
+    <div class="closing-row">
+      <h2>We didn't only build an organizational culture. <em>We changed lives around the globe.</em></h2>
+      <svg class="ic-logo" viewBox="0 0 100 100" role="img" aria-label="International Connections logo"><g class="lg-side"><circle cx="22" cy="24" r="12"/><circle cx="78" cy="24" r="12"/><path d="M4,52 C4,42 12,39 22,39 C32,39 38,43 38,53 C38,65 29,75 22,86 C15,75 4,64 4,52Z"/><path d="M96,52 C96,42 88,39 78,39 C68,39 62,43 62,53 C62,65 71,75 78,86 C85,75 96,64 96,52Z"/></g><g class="lg-mid"><circle cx="50" cy="16" r="13"/><path d="M29,48 C29,37 39,33 50,33 C61,33 71,37 71,48 C71,68 57,85 50,99 C43,85 29,68 29,48Z"/></g></svg>
+    </div>
+    <p class="lede">Thank you for every season, every case and every worker you helped get to the U.S. Here's to the next chapter, together.</p>
+  </div>
+</section>
+
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-top"><button id="lb-close" aria-label="Close">✕</button></div>
+  <div class="lb-stage">
+    <button id="lb-prev" aria-label="Previous photo">‹</button>
+    <img id="lb-img" alt="">
+    <button id="lb-next" aria-label="Next photo">›</button>
+  </div>
+  <p id="lb-cap"></p>
+</div>
+
+<script>
+/* ---------------- DATA ---------------- */
+const PHOTOS=[
+ {f:"session-1",c:"Information sessions",t:"Information session with candidates, 2017",y:"2017"},
+ {f:"session-3",c:"Information sessions",t:"A full room listening to the job offers",y:"2017"},
+ {f:"session-5",c:"Information sessions",t:"Presenting the process to candidates",y:"2017"},
+ {f:"session-2",c:"Information sessions",t:"Candidates at an information session"},
+ {f:"session-4",c:"Information sessions",t:"Candidates at an information session"},
+ {f:"session-6",c:"Information sessions",t:"Presenting at an information session"},
+ {f:"session-7",c:"Information sessions",t:"Setting up before a session"},
+ {f:"prep-room",c:"Behind the scenes",t:"The room ready before candidates arrived",y:"2017"},
+ {f:"prep-caps",c:"Behind the scenes",t:"IC caps and lanyards for every candidate",y:"2017"},
+ {f:"prep-table",c:"Behind the scenes",t:"Welcome table"},
+ {f:"prep-banner",c:"Behind the scenes",t:"Our banner, ready for interviews"},
+ {f:"prep-brochures",c:"Behind the scenes",t:"Brochures for candidates"},
+ {f:"ad-sa",c:"Outreach",t:"Ad in Landbouweekblad, South Africa",y:"2017"},
+ {f:"ad-mx",c:"Outreach",t:"Ad in La Revista del Borrego, Mexico",y:"2017"},
+ {f:"ad-pr",c:"Outreach",t:"Ad in El Vocero, Puerto Rico",y:"2017"},
+ {f:"fb-2017",c:"Outreach",t:"Our Facebook page in September 2017: 2,624 followers",y:"2019"},
+ {f:"fb-10k",c:"Outreach",t:"Our Facebook page passes 10,000 followers, December 2019",y:"2019"},
+ {f:"design-1",c:"Made in-house",t:"Season recap designed by our team",y:"2021"},
+ {f:"design-2",c:"Made in-house",t:"Season recap designed by our team",y:"2021"},
+ {f:"design-3",c:"Made in-house",t:"Season recap designed by our team",y:"2021"},
+ {f:"design-4",c:"Made in-house",t:"Thank-you card designed by our team"},
+ {f:"charter-1",c:"Our workers",t:"Our H-2A workers on a charter flight, 2020"},
+ {f:"charter-2",c:"Our workers",t:"On board the charter flight, 2020"},
+ {f:"workers-passports",c:"Our workers",co:"Sodaco",t:"“Sin miedo al éxito”: workers heading to Sodaco, 2023",y:"2023"},
+ {f:"workers-ready",c:"Our workers",t:"Bags packed and ready to travel, 2023",y:"2023"},
+ {f:"workers-dinner",c:"Our workers",co:"Chrisbro",t:"Workers from Chrisbro together in the U.S., 2023",y:"2023"},
+ {f:"farm-1",c:"Our employers",co:"Lagodinski",t:"Harvest season at Lagodinski",y:"2024"},
+ {f:"farm-2",c:"Our employers",co:"Shane Olson",t:"Spraying the fields at Shane Olson's operation",y:"2024"},
+ {f:"farm-3",c:"Our employers",co:"Shane Olson",t:"Combines at work at Shane Olson's operation"},
+];
+const SERIES={
+ workers:{title:"Workers who arrived in the U.S. with us",unit:"workers",data:[["2019",1398],["2020",1489],["2021",1803],["2022",2288],["2023",null],["2024",null],["2025",null],["2026",null]],note:"Dashed bars marked XX are waiting for their numbers."},
+ sa:{title:"Applications received from South Africa",unit:"applications",data:[["2018",183],["2019",325],["2020",342],["2021",272],["2022",350],["2023",604],["2024",911]],note:"Even after the pandemic dip in 2021, applications kept growing: five times more than in 2018."},
+ apps:{title:"Applications received from all countries",unit:"applications",data:[["FY2023",3372],["FY2024",7227],["FY2025",null],["FY2026",null]],note:"Mexico, El Salvador, Nicaragua, Jamaica and Honduras led the way in FY2024."},
+ companies:{title:"Companies that asked us to recruit",unit:"companies",data:[["2021",110],["2022",185],["2023",null],["2024",null],["2025",null],["2026",null]],note:"In 2023 alone we welcomed 51 new client companies."}
+};
+const COUNTRIES=[
+ ["ZA","South Africa","Africa",1],["NA","Namibia","Africa"],
+ ["MX","Mexico","Americas",1],["SV","El Salvador","Americas",1],["NI","Nicaragua","Americas",1],["JM","Jamaica","Americas",1],["HN","Honduras","Americas",1],["GT","Guatemala","Americas"],["CO","Colombia","Americas"],["DO","Dominican Republic","Americas"],["EC","Ecuador","Americas"],["PE","Peru","Americas"],["BR","Brazil","Americas"],["AR","Argentina","Americas"],["CL","Chile","Americas"],["CR","Costa Rica","Americas"],
+ ["GB","United Kingdom","Europe"],["IE","Ireland","Europe"],["NL","The Netherlands","Europe"],["DE","Germany","Europe"],["IT","Italy","Europe"],["PT","Portugal","Europe"],["PL","Poland","Europe"],["RO","Romania","Europe"],["BG","Bulgaria","Europe"],["UA","Ukraine","Europe"],["MD","Moldova","Europe"],["TR","Turkey","Europe"],
+ ["OM","Oman","Middle East"],
+ ["CN","China","Asia & Oceania"],["PH","Philippines","Asia & Oceania"],["TH","Thailand","Asia & Oceania"],["AU","Australia","Asia & Oceania"],["NZ","New Zealand","Asia & Oceania"],["FJ","Fiji","Asia & Oceania"]
+];
+const QUIZ=[
+ {k:"Culture",q:"Where did International Connections begin in 2015?",o:["Mexico City","Asunción, Paraguay","Johannesburg","San Salvador"],a:1,e:"In Asunción, Paraguay, with a small team and a big idea."},
+ {k:"Numbers",q:"How many applications did we receive from all countries in FY2024?",o:["3,372","911","7,227","1,433"],a:2,e:"7,227, more than double the year before."},
+ {k:"Culture",q:"If someone tries to charge a worker an unlawful fee for one of our job offers, what should the worker do?",o:["Pay it to secure the job","Report it right away to their IC point of contact","Ignore it","Post about it online"],a:1,e:"Report it immediately to their IC point of contact. Protecting our workers comes first."},
+ {k:"Culture",q:"What does our team do every October for World Animal Day?",o:["Nothing special","Collect donations for animal shelters and rescue groups","Close the office","Adopt one pet for the office"],a:1,e:"We collect donations for shelters and rescuers across the country, a different group of them every year."},
+ {k:"Numbers",q:"Which country sent the most new workers we placed in 2023?",o:["Mexico","El Salvador","South Africa","Nicaragua"],a:1,e:"El Salvador, with more than half of the 443 new workers."},
+ {k:"Culture",q:"Why did we publish a warning flyer for candidates in 2020?",o:["To announce a new office","Fake pages and groups were using our name","To change our logo","To close applications"],a:1,e:"Fake pages were using the IC name, so we asked candidates to verify everything through our official page and website."},
+ {k:"Culture",q:"Before AI and easy design tools, how did we create our forms, templates and reports?",o:["We hired an agency","We bought ready-made templates","Our own team built them from scratch","We didn't have any"],a:2,e:"Our own team designed them by hand, from application forms to PDF templates."},
+ {k:"Numbers",q:"How did our H-2A workers travel to the U.S. in 2020, in the middle of the pandemic?",o:["Commercial flights only","They couldn't travel","Charter flights","By bus"],a:2,e:"On charter flights, so farms could keep running and families could keep earning."},
+ {k:"Culture",q:"Which hashtag do we use to share our team culture and campaigns?",o:["#ICteam","#ICexperience","#ICworld","#ConnectingPeople"],a:1,e:"#ICexperience."}
+];
+
+const $=s=>document.querySelector(s);
+const fmt=n=>n.toLocaleString("en-US");
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------------- COUNTERS ---------------- */
+if(!reduce && "IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return; io.unobserve(e.target);
+    const el=e.target,to=+el.dataset.to,pre=el.dataset.pre||"",suf=el.dataset.suf||"",t0=performance.now();
+    const step=t=>{const p=Math.min(1,(t-t0)/1100),v=Math.round(to*(1-Math.pow(1-p,3)));el.textContent=pre+fmt(v)+suf;if(p<1)requestAnimationFrame(step)};
+    requestAnimationFrame(step);
+  }),{threshold:.6});
+  document.querySelectorAll(".tile .n").forEach(n=>io.observe(n));
+}
+
+/* ---------------- CHART ---------------- */
+function draw(k){
+  const s=SERIES[k],svg=$("#chart"),W=800,H=300,top=34,bot=40,left=10,right=10;
+  const vals=s.data.map(d=>d[1]).filter(v=>v!=null),max=Math.max(...vals)*1.08;
+  const n=s.data.length,slot=(W-left-right)/n,bw=Math.min(78,slot*.62);
+  const y=v=>H-bot-(v/max)*(H-top-bot);
+  let out="";
+  for(let i=0;i<=3;i++){const gy=H-bot-i*(H-top-bot)/3;out+=`<line class="grid" x1="${left}" x2="${W-right}" y1="${gy}" y2="${gy}"/>`}
+  const lastIdx=s.data.map(d=>d[1]!=null).lastIndexOf(true);
+  s.data.forEach(([lab,v],i)=>{
+    const cx=left+slot*i+slot/2,x=cx-bw/2;
+    if(v==null){
+      const gh=(H-top-bot)*.28;
+      out+=`<rect class="ghost" x="${x}" y="${H-bot-gh}" width="${bw}" height="${gh}" rx="4"/>`;
+      out+=`<rect x="${cx-16}" y="${H-bot-gh-24}" width="32" height="18" rx="3" style="fill:var(--xx)"/><text x="${cx}" y="${H-bot-gh-11}" text-anchor="middle" style="fill:var(--xx-ink);font-weight:500">XX</text>`;
+    }else{
+      const by=y(v),h=H-bot-by;
+      out+=`<rect class="bar${i===lastIdx?' last':''}" x="${x}" y="${by}" width="${bw}" height="${h}" rx="4"><title>${lab}: ${fmt(v)} ${s.unit}</title></rect>`;
+      out+=`<text class="val" x="${cx}" y="${by-8}" text-anchor="middle">${fmt(v)}</text>`;
+      const prev=i>0?s.data[i-1][1]:null;
+      if(prev){const c=Math.round((v-prev)/prev*100);out+=`<text class="chg" x="${cx}" y="${H-bot+32}" text-anchor="middle">${c>=0?"+":""}${c}%</text>`}
+    }
+    out+=`<text x="${cx}" y="${H-bot+17}" text-anchor="middle">${lab}</text>`;
+  });
+  svg.innerHTML=out;
+  $("#chart-title").textContent=s.title;
+  const known=s.data.filter(d=>d[1]!=null),a=known[0],b=known[known.length-1];
+  $("#chart-growth").textContent=`${a[0]} → ${b[0]}: +${Math.round((b[1]-a[1])/a[1]*100)}%`;
+  $("#chart-note").textContent=s.note;
+}
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===t));
+  draw(t.dataset.k);
+}));
+draw("workers");
+
+/* ---------------- LIGHTBOX ---------------- */
+let lbList=[],lbI=0;
+function openLB(list,i){lbList=list;lbI=i;showLB();$("#lb").hidden=false;$("#lb-close").focus();document.body.style.overflow="hidden"}
+function showLB(){const p=lbList[lbI];$("#lb-img").src="img/"+p.f+"."+(p.ext||"jpg");$("#lb-img").alt=p.t;$("#lb-cap").textContent=p.t+"  ·  "+(lbI+1)+" / "+lbList.length}
+function closeLB(){$("#lb").hidden=true;document.body.style.overflow=""}
+$("#lb-close").onclick=closeLB;
+$("#lb-prev").onclick=()=>{lbI=(lbI-1+lbList.length)%lbList.length;showLB()};
+$("#lb-next").onclick=()=>{lbI=(lbI+1)%lbList.length;showLB()};
+$("#lb").addEventListener("click",e=>{if(e.target.id==="lb"||e.target.classList.contains("lb-stage"))closeLB()});
+document.addEventListener("keydown",e=>{if($("#lb").hidden)return;if(e.key==="Escape")closeLB();if(e.key==="ArrowRight")$("#lb-next").click();if(e.key==="ArrowLeft")$("#lb-prev").click()});
+
+/* timeline thumbs */
+document.querySelectorAll(".thumbs").forEach(box=>{
+  const list=PHOTOS.filter(p=>p.y===box.dataset.set);
+  list.forEach((p,i)=>{const b=document.createElement("button");b.setAttribute("aria-label","Open photo: "+p.t);b.innerHTML=`<img src="img/${p.f}.jpg" alt="" loading="lazy">${p.co?`<em>${p.co}</em>`:""}`;b.onclick=()=>openLB(list,i);box.appendChild(b)});
+});
+
+
+
+/* ---------------- TIMELINE RAIL ---------------- */
+function rail(){const tl=$("#timeline"),r=tl.getBoundingClientRect(),vh=innerHeight;const p=Math.max(0,Math.min(1,(vh*.6-r.top)/r.height));$("#rail-fill").style.height=(p*100)+"%"}
+addEventListener("scroll",rail,{passive:true});addEventListener("resize",rail);rail();
+
+/* ---------------- QUOTE ---------------- */
+const EN=$("#quote").textContent;
+const ES="“Personalmente quiero agradecerles una vez más y contarles que hace 8 años yo soñé 2 a 3 veces que viajaba a otro país y veía que llevaba maletas, y eso para mí era una locura, pues aquí en El Salvador no se mencionaban visas de trabajo, y de turista para un joven es bien difícil. Ahora veo que esos sueños se van a cumplir este sábado y sé que Dios los puso a ustedes en mi camino. ¡Muchas gracias!”";
+$("#lang").onclick=e=>{const es=e.target.getAttribute("aria-pressed")!=="true";e.target.setAttribute("aria-pressed",es);$("#quote").textContent=es?ES:EN;e.target.textContent=es?"Read in English":"Leer en español"};
+
+/* ---------------- COUNTRIES ---------------- */
+const regions=["All","Americas","Africa","Europe","Middle East","Asia & Oceania"];let reg="All";
+function renderChips(){
+  const list=reg==="All"?COUNTRIES:COUNTRIES.filter(c=>c[2]===reg);
+  $("#chips").innerHTML=list.map(c=>`<span class="chip"><code>${c[0]}</code>${c[1]}</span>`).join("");
+}
+regions.forEach(r=>{const n=r==="All"?COUNTRIES.length:COUNTRIES.filter(c=>c[2]===r).length;const b=document.createElement("button");b.className="tab";b.innerHTML=`${r}<span class="count">${n}</span>`;b.setAttribute("aria-selected",r===reg);b.onclick=()=>{reg=r;document.querySelectorAll("#region-filters .tab").forEach(x=>x.setAttribute("aria-selected",x===b));renderChips()};$("#region-filters").appendChild(b)});
+renderChips();
+
+/* ---------------- TRAVEL STAMPS ---------------- */
+const TRIPS=[
+ {n:"South Africa",sh:"double",k:"green",top:"Republic of South Africa",mid:"Admitted",ap:"JNB",bot:"Immigration · IC team"},
+ {n:"Puerto Rico",sh:"rect",k:"blue",top:"U.S. Customs and Border Protection",mid:"Admitted",ap:"SJU",bot:"San Juan · IC team"},
+ {n:"Mexico",sh:"circle",k:"violet",top:"Migración",mid:"Entrada",ap:"MEX",bot:"IC team"},
+ {n:"Portugal",sh:"schengen",k:"black",eu:"P",top:"Entrada",ap:"✈ LIS",bot:"Lisboa · IC team"},
+ {n:"Italy",sh:"schengen",k:"blue",eu:"I",top:"Ingresso",ap:"✈ FCO",bot:"Roma · IC team"},
+ {n:"Japan",sh:"rect",k:"red",top:"上陸許可",mid:"Landing permission",ap:"NRT",bot:"Narita · IC team",jp:1},
+ {n:"Iceland",sh:"schengen",k:"violet",eu:"IS",top:"Koma",ap:"✈ KEF",bot:"Keflavík · IC team"},
+ {n:"Brazil",sh:"oval",k:"green",top:"Polícia Federal",mid:"Entrada",ap:"GRU",bot:"IC team"},
+ {n:"Uruguay",sh:"double",k:"blue",top:"Dirección Nacional de Migración",mid:"Entrada",ap:"MVD",bot:"IC team"},
+ {n:"Philippines",sh:"circle",k:"red",top:"Bureau of Immigration",mid:"Arrival",ap:"MNL",bot:"IC team"},
+ {n:"Peru",sh:"rect",k:"black",top:"Migraciones",mid:"Entrada",ap:"LIM",bot:"Lima · IC team"},
+ {n:"Argentina",sh:"oval",k:"blue",top:"Migraciones",mid:"Entrada",ap:"EZE",bot:"Ezeiza · IC team"},
+ {n:"Colombia",sh:"circle",k:"green",top:"Migración Colombia",mid:"Entrada",ap:"BOG",bot:"Bogotá · IC team"},
+ {n:"Ecuador",sh:"rect",k:"violet",top:"Migración Ecuador",mid:"Entrada",ap:"UIO",bot:"Quito · IC team"},
+ {n:"Dubai",sh:"oval",k:"red",top:"دبي · United Arab Emirates",mid:"Arrival",ap:"DXB",bot:"IC team"}
+];
+$("#stamps").innerHTML=TRIPS.map(t=>t.sh==="schengen"
+ ?`<div class="ps schengen ${t.k}" aria-label="${t.n}"><i class="eu">${t.eu}</i><small>${t.top}</small><b>${t.n}</b><span class="ap">${t.ap}</span><small>${t.bot}</small></div>`
+ :`<div class="ps ${t.sh} ${t.k}" aria-label="${t.n}">${t.jp?`<span class="loc">${t.top}</span>`:`<small>${t.top}</small>`}<b>${t.n}</b><small>${t.mid} · ${t.ap}</small><small>${t.bot}</small></div>`
+).join("")+`<div class="more-wrap"><div class="tstamp more"><span class="plane" aria-hidden="true">✈</span><b>And more to come</b></div></div>`;
+
+/* ---------------- QUIZ ---------------- */
+let qi=0,score=0;
+function renderQ(){
+  const box=$("#quiz");
+  if(qi>=QUIZ.length){
+    const msg=score===QUIZ.length?"Perfect score. You are IC history.":score>=6?"Great job. You clearly lived these seasons.":"Not bad. Scroll back up and try again!";
+    box.innerHTML=`<div class="q-prog"><span>Done</span><span>${score} / ${QUIZ.length}</span></div><div class="q-bar"><i style="width:100%"></i></div><p class="q-text">${score} out of ${QUIZ.length}</p><p class="q-fb">${msg}</p><div class="q-actions"><button class="primary" id="q-again">Play again</button></div>`;
+    $("#q-again").onclick=()=>{qi=0;score=0;renderQ()};return;
+  }
+  const q=QUIZ[qi];
+  box.innerHTML=`<div class="q-prog"><span>Question ${qi+1} of ${QUIZ.length} · <b class="q-kind">${q.k}</b></span><span>Score ${score}</span></div><div class="q-bar"><i style="width:${qi/QUIZ.length*100}%"></i></div><p class="q-text">${q.q}</p><div class="opts">${q.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join("")}</div><p class="q-fb" id="q-fb"></p><div class="q-actions"><button class="primary" id="q-next" hidden>${qi===QUIZ.length-1?"See my score":"Next question"}</button></div>`;
+  box.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i,ok=i===q.a;if(ok)score++;
+    box.querySelectorAll(".opt").forEach(x=>{x.disabled=true;if(+x.dataset.i===q.a)x.classList.add("right")});
+    if(!ok)b.classList.add("wrong");
+    $("#q-fb").textContent=(ok?"Correct! ":"Not quite. ")+q.e;
+    const n=$("#q-next");n.hidden=false;n.focus();n.onclick=()=>{qi++;renderQ()};
+  });
+}
+renderQ();
+const FLY=[{f:"animal-day-2",t:"World Animal Day donation drive"},{f:"animal-day",t:"World Animal Day donation drive"},{f:"animal-day-3",t:"World Animal Day donation drive"}];
+const APP=[{f:"app-3",t:"IC Workers Tracker: welcome screen"},{f:"app-1",t:"Manage multiple companies from a single account"},{f:"app-2",t:"Manage multiple contracts and their details"},{f:"app-5",t:"Home: active contracts, paperwork status and case numbers"}];
+document.querySelectorAll("[data-app] button").forEach(b=>b.onclick=()=>openLB(APP,+b.dataset.i));
+document.querySelector("[data-wall]").onclick=()=>openLB([{f:"wall-start",t:"How our chalkboard wall started: built by the team"}],0);
+const CHARTER=[{f:"charter-1",t:"Our H-2A workers on a charter flight, 2020"},{f:"charter-2",t:"On board the charter flight, 2020"}];
+document.querySelectorAll("[data-pair] button").forEach(b=>b.onclick=()=>openLB(CHARTER,+b.dataset.i));
+$("#wa-open").onclick=()=>openLB([{f:"marvin-msg",t:"Marvin's original WhatsApp message",ext:"png"}],0);
+document.querySelectorAll(".flyer").forEach(b=>b.onclick=()=>openLB(FLY,+b.dataset.i));
+</script>
+
+</body>
+</html>
