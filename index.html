@@ -200,7 +200,7 @@ img{max-width:100%;display:block}
 .count{font-family:var(--mono);color:var(--ink-2);font-size:14px;margin-left:4px}
 
 /* ---------- TRAVEL STAMPS ---------- */
-.stamps{display:flex;flex-wrap:wrap;gap:22px 26px;padding:8px 4px;align-items:center}
+.stamps{display:flex;flex-wrap:wrap;gap:22px 26px;padding:8px 4px;align-items:center;justify-content:center}
 .ps{--c:var(--ink-red);color:var(--c);border:2.5px solid var(--c);font-family:var(--mono);text-align:center;line-height:1.15;background:var(--card);display:grid;justify-items:center;align-content:center;gap:3px;padding:10px 14px;position:relative;transition:transform .25s;opacity:.93}
 .ps:nth-child(4n+1){transform:rotate(-6deg)}
 .ps:nth-child(4n+2){transform:rotate(4deg)}
@@ -877,12 +877,21 @@ const TRIPS=[
  {n:"Iceland",sh:"schengen",k:"violet",eu:"IS",top:"Koma",ap:"✈ KEF",bot:"Keflavík · IC team"},
  {n:"Brazil",sh:"oval",k:"green",top:"Polícia Federal",mid:"Entrada",ap:"GRU",bot:"IC team"},
  {n:"Uruguay",sh:"double",k:"blue",top:"Dirección Nacional de Migración",mid:"Entrada",ap:"MVD",bot:"IC team"},
- {n:"Chile",sh:"circle",k:"red",top:"PDI · Policía de Investigaciones",mid:"Entrada",ap:"SCL",bot:"Santiago · IC team"},
+ {n:"Chile",sh:"circle",k:"red",top:"PDI Chile",mid:"Entrada",ap:"SCL",bot:"Santiago · IC team"},
  {n:"Peru",sh:"rect",k:"black",top:"Migraciones",mid:"Entrada",ap:"LIM",bot:"Lima · IC team"},
  {n:"Argentina",sh:"oval",k:"blue",top:"Migraciones",mid:"Entrada",ap:"EZE",bot:"Ezeiza · IC team"},
  {n:"Colombia",sh:"circle",k:"green",top:"Migración Colombia",mid:"Entrada",ap:"BOG",bot:"Bogotá · IC team"},
  {n:"Ecuador",sh:"rect",k:"violet",top:"Migración Ecuador",mid:"Entrada",ap:"UIO",bot:"Quito · IC team"},
- {n:"Dubai",sh:"oval",k:"red",top:"دبي · United Arab Emirates",mid:"Arrival",ap:"DXB",bot:"IC team"}
+ {n:"Dubai",sh:"oval",k:"red",top:"دبي · United Arab Emirates",mid:"Arrival",ap:"DXB",bot:"IC team"},
+ {n:"Ukraine",sh:"rect",k:"blue",top:"Державна прикордонна служба",mid:"В'їзд · Entry",ap:"KBP",bot:"Kyiv · IC team"},
+ {n:"Spain",sh:"schengen",k:"red",eu:"E",top:"Entrada",ap:"✈ MAD",bot:"Madrid · IC team"},
+ {n:"Czech Republic",sh:"schengen",k:"blue",eu:"CZ",top:"Vstup",ap:"✈ PRG",bot:"Praha · IC team"},
+ {n:"Hungary",sh:"schengen",k:"green",eu:"H",top:"Belépés",ap:"✈ BUD",bot:"Budapest · IC team"},
+ {n:"Austria",sh:"schengen",k:"red",eu:"A",top:"Einreise",ap:"✈ VIE",bot:"Wien · IC team"},
+ {n:"Thailand",sh:"oval",k:"violet",top:"Immigration Bureau",mid:"Admitted",ap:"BKK",bot:"Bangkok · IC team"},
+ {n:"Singapore",sh:"double",k:"red",top:"Immigration & Checkpoints",mid:"Visit Pass",ap:"SIN",bot:"Changi · IC team"},
+ {n:"Panama",sh:"circle",k:"blue",top:"Migración Panamá",mid:"Entrada",ap:"PTY",bot:"IC team"},
+ {n:"Ireland",sh:"rect",k:"green",top:"Immigration Service",mid:"Permission to land",ap:"DUB",bot:"Dublin · IC team"}
 ];
 $("#stamps").innerHTML=TRIPS.map(t=>t.sh==="schengen"
  ?`<div class="ps schengen ${t.k}" aria-label="${t.n}"><i class="eu">${t.eu}</i><small>${t.top}</small><b>${t.n}</b><span class="ap">${t.ap}</span><small>${t.bot}</small></div>`
