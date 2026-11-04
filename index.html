@@ -46,6 +46,15 @@ img{max-width:100%;display:block}
 /* ---------- HERO ---------- */
 .hero{padding-block:48px 24px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:40px;align-items:center}
+
+/* photo hero */
+.hero{position:relative;padding-block:72px 64px;background:linear-gradient(rgba(10,22,40,.70),rgba(10,22,40,.84)),url(img/hero-passports.jpg) center 50%/cover}
+.hero h1,.hero .hero-lede,.hero .hero-lede .hl-team{color:#fff}
+.hero .h-conn{-webkit-text-stroke:2px #fff;text-stroke:2px #fff}
+.hero .hl-road{background:repeating-linear-gradient(90deg,#8fd6d8 0 7px,transparent 7px 12px) left calc(100% - 1px)/100% 2.5px no-repeat}
+.hero .hl-road::after{color:#8fd6d8}
+.hero .hl-life{color:#ff9b85;border-color:#ff9b85}
+.hero .board{background:rgba(255,255,255,.95);color:#4a5970;border-color:transparent}
 .hero h1{font-size:clamp(44px,6.2vw,80px);font-variation-settings:"wdth" 118;font-weight:800;letter-spacing:-.02em}
 .hero h1 .h-line{display:block}
 .h-conn{color:transparent;-webkit-text-stroke:2px var(--ink);text-stroke:2px var(--ink)}
@@ -440,11 +449,6 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
         <div class="stub"><span>Boarding · 11 yrs</span></div>
       </div>
     </div>
-    <div class="strip">
-      <img src="img/session-4.jpg" alt="Candidates at one of our information sessions">
-      <img src="img/workers-dinner.jpg" alt="Workers sharing a meal in the U.S.">
-      <img src="img/workers-passports.jpg" alt="Workers holding their passports and boarding passes">
-    </div>
   </div>
 </header>
 
@@ -770,7 +774,7 @@ const QUIZ=[
  {k:"Numbers",q:"Which country sent the most new workers we placed in 2023?",o:["Mexico","El Salvador","South Africa","Nicaragua"],a:1,e:"El Salvador, with 205 new workers recruited."},
  {k:"Culture",q:"Before AI and easy design tools, how did we create our forms, templates and reports?",o:["We hired an agency","We bought ready-made templates","Our own team built them from scratch","We didn't have any"],a:2,e:"Our own team designed them by hand, from application forms to PDF templates."},
  {k:"Numbers",q:"How did our H-2A workers travel to the U.S. in 2020, in the middle of the pandemic?",o:["Commercial flights only","They couldn't travel","Charter flights","By bus"],a:2,e:"On charter flights, so farms could keep running and families could keep earning."},
- {k:"Culture",q:"Before our current office on Enciso Velloso 2312, how many offices do you think we had?",o:["2","3","4","5","6"],a:3,e:"Five! As the company grew, we kept running out of space and had to move again and again. Fun fact: our very first office was Jess's bedroom."}
+ {k:"Culture",q:"Before our current office on Enciso Velloso 2312, how many offices do you think we had?",o:["2","3","4","5","6"],a:3,e:"Five! As the company grew, we kept running out of space and had to move again and again. Fun fact: our very first office was Jess working from her own bedroom."}
 ];
 
 const $=s=>document.querySelector(s);
