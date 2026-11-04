@@ -174,7 +174,8 @@ img{max-width:100%;display:block}
 .phones button:hover{transform:translateY(-4px)}
 .phones img{width:100%;height:auto}
 @media (max-width:520px){.phones{grid-template-columns:repeat(4,70%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.phones button{scroll-snap-align:start}}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pair{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:520px){.pair{grid-template-columns:1fr 1fr}.pair button:last-child{grid-column:1/-1;aspect-ratio:16/9}}
 .pair button{padding:0;border:0;border-radius:10px;overflow:hidden;background:var(--line);aspect-ratio:4/3}
 .pair img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .3s}
 .pair button:hover img{transform:scale(1.04)}
@@ -557,10 +558,11 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
       <article class="m">
         <div class="stamp"><small>Charter</small><b>2020</b><small>H-2A</small></div>
         <div class="m-body"><h3>Charter flights in a closed world</h3>
-          <p>When the pandemic grounded the world, we didn't stop. Our H-2A workers traveled to the U.S. on charter flights, 117 of them from South Africa alone, so farms could keep running and families could keep earning. Even that year, 1,208 workers made it to the U.S. with us.</p>
+          <p>When the pandemic grounded the world, we didn't stop. Our H-2A workers traveled to the U.S. on charter flights, 117 of them from South Africa alone, so farms could keep running and families could keep earning. Even that year, 1,208 workers made it to the U.S. with us. That same year we turned five, and celebrated it with our own IC face masks.</p>
           <div class="pair" data-pair>
             <button data-i="0" aria-label="Open photo: workers on the charter flight"><img src="img/charter-1.jpg" alt="Workers seated on the charter flight with crew in protective suits"></button>
             <button data-i="1" aria-label="Open photo: a worker on board"><img src="img/charter-2.jpg" alt="A worker in a mask on board the charter flight"></button>
+            <button data-i="2" aria-label="Open photo: IC face masks and 5-year cards"><img src="img/masks-2020.jpg" alt="Face masks with the IC logo and cards celebrating 5 years of IC"></button>
           </div>
           <div class="thumbs" data-set="2020"></div></div>
       </article>
@@ -989,7 +991,7 @@ document.querySelectorAll("[data-app] button").forEach(b=>b.onclick=()=>openLB(A
 const WALL=[{f:"wall-start",t:"How our chalkboard wall started, 2019: built by the team"},{f:"wall-2026",t:"Our chalkboard wall today: Fiscal Year 2026"}];
 document.querySelector("[data-wall]").onclick=()=>openLB(WALL,0);
 document.querySelector("[data-wall-now]").onclick=()=>openLB(WALL,1);
-const CHARTER=[{f:"charter-1",t:"Our H-2A workers on a charter flight, 2020"},{f:"charter-2",t:"On board the charter flight, 2020"}];
+const CHARTER=[{f:"charter-1",t:"Our H-2A workers on a charter flight, 2020"},{f:"charter-2",t:"On board the charter flight, 2020"},{f:"masks-2020",t:"Our own IC face masks, and cards for our 5th anniversary, 2020"}];
 document.querySelectorAll("[data-pair] button").forEach(b=>b.onclick=()=>openLB(CHARTER,+b.dataset.i));
 $("#wa-open").onclick=()=>openLB([{f:"marvin-msg",t:"Marvin's original WhatsApp message",ext:"png"}],0);
 const WK=[...document.querySelectorAll("[data-wk]")].map(b=>({f:b.querySelector("img").getAttribute("src").slice(4,-4),t:b.getAttribute("aria-label").replace("Open photo: ","")}));
