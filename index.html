@@ -15,17 +15,17 @@
   --paper:#f4f6f8; --card:#ffffff; --ink:#13294b; --ink-2:#4a5970; --line:#d6dde6;
   --teal:#1d8a8d; --teal-soft:#d5ecec; --stamp:#c2412d; --xx:#ffe98a; --xx-ink:#13294b;
   --ink-red:#c2412d; --ink-blue:#2557a7; --ink-violet:#6b3fa0; --ink-green:#2e7d4f; --ink-black:#2b2f36;
-  --voice-bg:#13294b; --voice-fg:#f4f6f8; --voice-accent:#8fd6d8;
+  --road-bg:#13294b; --voice-bg:#13294b; --voice-fg:#f4f6f8; --voice-accent:#8fd6d8;
   --display:"Archivo","Arial Narrow",Arial,sans-serif;
   --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#0c1626; --card:#13223a; --ink:#e8eef6; --ink-2:#a5b3c6; --line:#263a5a;
-  --teal:#5cc4c6; --teal-soft:#16393f; --stamp:#f07a63; --xx:#6b5a12; --xx-ink:#fff6c8; --ink-red:#f07a63; --ink-blue:#7aa7f0; --ink-violet:#b892e8; --ink-green:#6cc795; --ink-black:#c9d1dc; --voice-bg:#13223a; --voice-fg:#e8eef6; --voice-accent:#5cc4c6; color-scheme:dark}}
+  --teal:#5cc4c6; --teal-soft:#16393f; --stamp:#f07a63; --xx:#6b5a12; --xx-ink:#fff6c8; --ink-red:#f07a63; --ink-blue:#7aa7f0; --ink-violet:#b892e8; --ink-green:#6cc795; --ink-black:#c9d1dc; --road-bg:#060e1b; --voice-bg:#13223a; --voice-fg:#e8eef6; --voice-accent:#5cc4c6; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#0c1626; --card:#13223a; --ink:#e8eef6; --ink-2:#a5b3c6; --line:#263a5a;
-  --teal:#5cc4c6; --teal-soft:#16393f; --stamp:#f07a63; --xx:#6b5a12; --xx-ink:#fff6c8; --ink-red:#f07a63; --ink-blue:#7aa7f0; --ink-violet:#b892e8; --ink-green:#6cc795; --ink-black:#c9d1dc; --voice-bg:#13223a; --voice-fg:#e8eef6; --voice-accent:#5cc4c6; color-scheme:dark}
+  --teal:#5cc4c6; --teal-soft:#16393f; --stamp:#f07a63; --xx:#6b5a12; --xx-ink:#fff6c8; --ink-red:#f07a63; --ink-blue:#7aa7f0; --ink-violet:#b892e8; --ink-green:#6cc795; --ink-black:#c9d1dc; --road-bg:#060e1b; --voice-bg:#13223a; --voice-fg:#e8eef6; --voice-accent:#5cc4c6; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6}
@@ -183,8 +183,8 @@ img{max-width:100%;display:block}
 .m.now .stamp{border-color:var(--ink);color:var(--ink)}
 
 /* ---------- VOICE ---------- */
-.voice{background:var(--voice-bg);color:var(--voice-fg)}
-.voice .eyebrow{color:var(--voice-accent)}
+.voice{background:var(--teal-soft);color:var(--ink)}
+.voice .eyebrow{color:var(--teal)}
 .quote{font-family:var(--display);font-variation-settings:"wdth" 92;font-size:clamp(18px,1.8vw,22px);font-weight:500;line-height:1.45;max-width:46ch;margin:0}
 .wa{margin:18px 0 0;max-width:420px;display:grid;gap:8px}
 .wa button{padding:0;border:0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 26px -14px rgba(0,0,0,.6);transform:rotate(-1deg);transition:transform .25s}
@@ -192,8 +192,8 @@ img{max-width:100%;display:block}
 .wa img{width:100%;height:auto}
 .wa figcaption{font-family:var(--mono);font-size:12px;letter-spacing:.06em;opacity:.8}
 .voices{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:14px;align-items:start}
-.voice-2{padding-left:44px;border-left:1px solid rgba(255,255,255,.18)}
-@media (max-width:860px){.voices{grid-template-columns:1fr;gap:30px}.voice-2{padding-left:0;border-left:0;padding-top:28px;border-top:1px solid rgba(255,255,255,.18)}}
+.voice-2{padding-left:44px;border-left:1px solid var(--line)}
+@media (max-width:860px){.voices{grid-template-columns:1fr;gap:30px}.voice-2{padding-left:0;border-left:0;padding-top:28px;border-top:1px solid var(--line)}}
 .wkr{margin:18px 0 0;display:flex;align-items:center;gap:14px}
 .wkr img{width:120px;height:132px;object-fit:cover;border-radius:10px;border:3px solid #fff;transform:rotate(-2deg);box-shadow:0 10px 22px -12px rgba(0,0,0,.6)}
 .wkr figcaption{font-family:var(--mono);font-size:12px;letter-spacing:.06em;opacity:.85;max-width:20ch;line-height:1.5}
@@ -272,6 +272,15 @@ img{max-width:100%;display:block}
 .lb button{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:99px;width:46px;height:46px;font-size:22px}
 .lb p{text-align:center;font-size:15px;margin-top:10px;opacity:.85}
 
+
+/* milestones band */
+#road{background:var(--road-bg);padding-block:64px}
+#road .head h2{color:#fff}
+#road .head .lede{color:#c9d4e2}
+#road .head .eyebrow{color:#8fd6d8}
+#road .rail{background:rgba(255,255,255,.2)}
+#road .m::before{background:var(--voice-bg);border-color:#8fd6d8}
+#road .rail i{background:#8fd6d8}
 /* ---------- CULTURE ---------- */
 .culture-lede{font-family:var(--display);font-variation-settings:"wdth" 104;font-weight:750;font-size:clamp(26px,3.4vw,40px);line-height:1.15;color:var(--ink);max-width:22ch;text-wrap:balance;margin-top:4px}
 .habits{position:relative;color:var(--stamp);white-space:nowrap}
@@ -489,7 +498,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
   </div>
 </section>
 
-<section id="road" style="padding-top:24px">
+<section id="road">
   <div class="wrap">
     <div class="head"><span class="eyebrow">The road we traveled</span><h2>Milestones</h2><p class="lede">Tap any photo to see it bigger.</p></div>
     <div class="timeline" id="timeline">
