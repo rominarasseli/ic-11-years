@@ -242,6 +242,13 @@ img{max-width:100%;display:block}
 .tstamp.more small{font-size:12px}
 .tstamp.more .plane{font-size:40px;line-height:1;display:inline-block;animation:fly 3s ease-in-out infinite}
 @keyframes fly{0%,100%{transform:translate(-6px,2px) rotate(-8deg)}50%{transform:translate(6px,-4px) rotate(-8deg)}}
+.trip-photo{margin:6px 0 26px;display:grid;gap:8px}
+.trip-photo button{padding:0;border:0;border-radius:14px;overflow:hidden;background:var(--line);aspect-ratio:21/9}
+.trip-photo img{width:100%;height:100%;object-fit:cover;object-position:center 55%;transition:transform .4s}
+.trip-photo button:hover img{transform:scale(1.02)}
+.trip-photo figcaption{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-2)}
+.trip-photo figcaption b{color:var(--ink);font-weight:500}
+@media (max-width:620px){.trip-photo button{aspect-ratio:4/3}}
 /* ---------- VIDEOS ---------- */
 .videos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .video figure{margin:0}
@@ -655,6 +662,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
 <section id="travels" style="padding-top:8px">
   <div class="wrap">
     <div class="head"><span class="eyebrow">Our office on the road</span><h2>Where our team has traveled</h2><p class="lede">Our work doesn't stop at the office door. Over the years, our team has traveled to meet candidates, employers and partners, and to learn from the places our workers come from.</p></div>
+    <figure class="trip-photo"><button data-trip aria-label="Open photo: team meeting in Iceland, 2023"><img src="img/team-iceland.jpg" alt="The IC team in front of a waterfall with a rainbow in Iceland" loading="lazy"></button><figcaption><b>Team meeting · Iceland</b><span>2023</span></figcaption></figure>
     <div class="stamps" id="stamps"></div>
   </div>
 </section>
@@ -1004,6 +1012,7 @@ $("#wa-open").onclick=()=>openLB([{f:"marvin-msg",t:"Marvin's original WhatsApp 
 const WK=[...document.querySelectorAll("[data-wk]")].map(b=>({f:b.querySelector("img").getAttribute("src").slice(4,-4),t:b.getAttribute("aria-label").replace("Open photo: ","")}));
 document.querySelectorAll("[data-wk]").forEach(b=>b.onclick=()=>openLB(WK,+b.dataset.wk));
 document.querySelector("[data-cap]").onclick=()=>openLB([{f:"ic-cap",t:"Where it all began"}],0);
+document.querySelector("[data-trip]").onclick=()=>openLB([{f:"team-iceland",t:"Team meeting in Iceland, 2023"}],0);
 document.querySelectorAll(".flyer").forEach(b=>b.onclick=()=>openLB(FLY,+b.dataset.i));
 </script>
 
