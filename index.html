@@ -179,6 +179,9 @@ img{max-width:100%;display:block}
 .pair img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .3s}
 .pair button:hover img{transform:scale(1.04)}
 .photo-slot{aspect-ratio:16/9;max-width:460px;border:2px dashed var(--line);border-radius:12px;display:grid;place-content:center;justify-items:center;gap:8px;color:var(--ink-2);text-align:center;padding:16px}
+.m-hero{margin-top:6px;padding:0;border:0;border-radius:12px;overflow:hidden;background:var(--line);aspect-ratio:16/9}
+.m-hero img{width:100%;height:100%;object-fit:cover;object-position:center 60%;transition:transform .4s}
+.m-hero:hover img{transform:scale(1.03)}
 .m.now{border-color:var(--ink)}
 .m.now .stamp{border-color:var(--ink);color:var(--ink)}
 
@@ -524,7 +527,8 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
       <article class="m">
         <div class="stamp"><small>Departure</small><b>2015</b><small>Asunción</small></div>
         <div class="m-body"><h3>Where it all began</h3>
-          <p>We opened our doors in Asunción, Paraguay, as International Connections S.R.L., with a small team and a lot of determination to connect workers with U.S. employers who needed them.</p></div>
+          <p>We opened our doors in Asunción, Paraguay, as International Connections S.R.L., with a small team and a lot of determination to connect workers with U.S. employers who needed them.</p>
+          <button class="m-hero" data-cap aria-label="Open photo: International Connections cap in a freshly plowed field"><img src="img/ic-cap.jpg" alt="An International Connections cap resting on freshly plowed soil, with a tractor behind"></button></div>
       </article>
 
       <article class="m">
@@ -990,6 +994,7 @@ document.querySelectorAll("[data-pair] button").forEach(b=>b.onclick=()=>openLB(
 $("#wa-open").onclick=()=>openLB([{f:"marvin-msg",t:"Marvin's original WhatsApp message",ext:"png"}],0);
 const WK=[...document.querySelectorAll("[data-wk]")].map(b=>({f:b.querySelector("img").getAttribute("src").slice(4,-4),t:b.getAttribute("aria-label").replace("Open photo: ","")}));
 document.querySelectorAll("[data-wk]").forEach(b=>b.onclick=()=>openLB(WK,+b.dataset.wk));
+document.querySelector("[data-cap]").onclick=()=>openLB([{f:"ic-cap",t:"Where it all began"}],0);
 document.querySelectorAll(".flyer").forEach(b=>b.onclick=()=>openLB(FLY,+b.dataset.i));
 </script>
 
