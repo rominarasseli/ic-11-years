@@ -464,7 +464,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
     <div class="head"><span class="eyebrow">How far we've come</span><h2>Our growth in numbers</h2></div>
     <div class="tiles">
       <div class="tile"><span class="n" data-to="66" data-pre="+" data-suf="%">+66%</span><h3>Growing through a pandemic</h3><p>In just three years, pandemic included, the number of workers arriving in the U.S. with us grew 66%: from 1,381 in 2019 to 2,299 in 2022.</p><span class="tile-meta">2019 → 2022</span></div>
-      <div class="tile"><span class="n" data-to="114" data-pre="+" data-suf="%">+114%</span><h3>Twice the trust in one year</h3><p>In a single year, the number of people applying with us more than doubled, from 3,372 to 7,227. Facebook and word of mouth did the rest.</p><span class="tile-meta">FY2023 → FY2024</span></div>
+      <div class="tile"><span class="n" data-to="188" data-pre="+" data-suf="%">+188%</span><h3>Trust that keeps growing</h3><p>In four years, the number of people applying with us nearly tripled, from 4,645 to 13,390. Facebook and word of mouth did the rest.</p><span class="tile-meta">FY2022 → FY2026</span></div>
       <div class="tile"><span class="n" data-to="50" data-suf="+">50+</span><h3>One office, the whole world</h3><p>From a small office in Asunción, we have helped workers from more than 50 countries, from South Africa to Manila, reach jobs in the U.S.</p><span class="tile-meta">Since 2015</span></div>
     </div>
 
@@ -472,6 +472,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
       <div class="tabs" role="tablist" aria-label="Choose a metric">
         <button class="tab" role="tab" aria-selected="true" data-k="workers" id="tab-workers">Workers arrived</button>
         <button class="tab" role="tab" aria-selected="false" data-k="sa" id="tab-sa">South Africa applications</button>
+        <button class="tab" role="tab" aria-selected="false" data-k="apps" id="tab-apps">Total applications</button>
         <button class="tab" role="tab" aria-selected="false" data-k="companies" id="tab-companies">Companies recruiting</button>
       </div>
       <div class="chart-meta"><h3 id="chart-title">Workers who arrived in the U.S. with us</h3><span class="growth" id="chart-growth"></span></div>
@@ -535,14 +536,14 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
       <article class="m">
         <div class="stamp"><small>New route</small><b>2023</b><small>El Salvador</small></div>
         <div class="m-body"><h3>New doors open in Central America</h3>
-          <p>2,452 workers arrived in the U.S. El Salvador became our top recruiting country, with 205 new workers recruited from there alone. Applications from South Africa grew 73% in one year.</p>
+          <p>2,452 workers arrived in the U.S. El Salvador became our top recruiting country, with 205 new workers recruited from there alone. Applications from South Africa reached a record 762.</p>
           <div class="thumbs" data-set="2023"></div></div>
       </article>
 
       <article class="m">
-        <div class="stamp"><small>Demand</small><b>2024</b><small>7,227 apps</small></div>
-        <div class="m-body"><h3>7,227 people knocked on our door</h3>
-          <p>Applications more than doubled in one year, from Mexico, El Salvador, Nicaragua, Jamaica, Honduras and well beyond. 1,433 returning workers chose to travel with us again, and 2,508 workers arrived in total.</p>
+        <div class="stamp"><small>Demand</small><b>2024</b><small>8,986 apps</small></div>
+        <div class="m-body"><h3>8,986 people knocked on our door</h3>
+          <p>8,986 people applied with us that year, from Mexico, El Salvador, Nicaragua, Jamaica, Honduras, South Africa and well beyond. 1,433 returning workers chose to travel with us again, and 2,508 workers arrived in total.</p>
 </div>
       </article>
 
@@ -748,7 +749,8 @@ const PHOTOS=[
 ];
 const SERIES={
  workers:{title:"Workers who arrived in the U.S. with us",unit:"workers",data:[["2015",720],["2016",673],["2017",953],["2018",949],["2019",1381],["2020",1208],["2021",1775],["2022",2299],["2023",2452],["2024",2508],["2025",2527],["2026",2715]],note:"Fiscal years. More than 20,000 workers have arrived in the U.S. with us since 2015."},
- sa:{title:"Applications received from South Africa",unit:"applications",data:[["2018",183],["2019",325],["2020",342],["2022",350],["2023",604],["2024",911]],note:"Applications kept growing season after season: five times more than in 2018."},
+ sa:{title:"Applications received from South Africa",unit:"applications",data:[["2018",183],["2019",325],["2020",342],["2021",386],["2022",596],["2023",762],["2024",481],["2025",709],["2026",530]],note:"Fiscal years. South Africa has been with us since the beginning, with a peak of 762 applications in FY2023."},
+ apps:{title:"Total applications received",unit:"applications",data:[["2022",4645],["2023",6565],["2024",8986],["2025",10810],["2026",13390]],note:"Fiscal years, all countries including South Africa. Applications nearly tripled in four years."},
  companies:{title:"Companies that asked us to recruit",unit:"companies",data:[["2021",110],["2022",185],["2023",null],["2024",null],["2025",null],["2026",null]],note:"In 2022 alone we recruited 51 new client companies."}
 };
 const COUNTRIES=[
@@ -761,7 +763,7 @@ const COUNTRIES=[
 const QUIZ=[
  {k:"Culture",q:"Where did International Connections begin in 2015?",o:["Mexico City","Asunción, Paraguay","Johannesburg","San Salvador"],a:1,e:"In Asunción, Paraguay, with a small team and a big idea."},
  {k:"Culture",q:"Beauty runs the office, and she's been enjoying it. How much do you think our queen weighs?",o:["4 kg","4.5 kg","5 kg","6 kg","6.5 kg","+7 kg"],a:4,e:"About 6.5 kg of pure royalty (and snacks)."},
- {k:"Numbers",q:"How many applications did we receive from all countries in FY2024?",o:["3,372","911","7,227","1,433"],a:2,e:"7,227, more than double the year before."},
+ {k:"Numbers",q:"How many applications did we receive in FY2026?",o:["4,645","8,986","13,390","20,160"],a:2,e:"13,390, almost three times as many as in FY2022."},
  {k:"Culture",q:"If someone tries to charge a worker an unlawful fee for one of our job offers, what should the worker do?",o:["Pay it to secure the job","Report it right away to their IC point of contact","Ignore it","Post about it online"],a:1,e:"Report it immediately to their IC point of contact. Protecting our workers comes first."},
  {k:"Culture",q:"What does our team do every October for World Animal Day?",o:["Nothing special","Collect donations for animal shelters and rescue groups","Close the office","Adopt one pet for the office"],a:1,e:"We collect donations for shelters and rescuers across the country, a different group of them every year."},
  {k:"Culture",q:"Ricardo, the orange cat that lives next door, was once a wild stray who urgently needed to go to the vet. The team tried for days to catch him. Who finally did it?",o:["Romi","Pao","Jess","Yani","Jaz","Another team member"],a:2,e:"Jess! After days of everyone trying, our boss lady was the only one who managed to catch Ricardo, with the trap cage in her office!"},
