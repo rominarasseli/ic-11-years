@@ -86,7 +86,7 @@ img{max-width:100%;display:block}
 .stub span{writing-mode:vertical-rl;font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal)}
 
 .strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-top:40px}
-.strip img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+.strip img{width:100%;height:240px;object-fit:cover;object-position:center 40%;border-radius:10px}
 
 /* ---------- LETTER ---------- */
 .letter{background:var(--card);border-block:1px solid var(--line)}
@@ -135,14 +135,17 @@ img{max-width:100%;display:block}
 .stamp small{font-size:10px;letter-spacing:.16em;text-transform:uppercase}
 .m-body{display:grid;gap:12px;min-width:0}
 .m-body p{color:var(--ink-2)}
-.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:4px}
-.thumbs button{position:relative;padding:0;border:0;border-radius:8px;overflow:hidden;background:var(--line);aspect-ratio:4/3}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:4px}
+.thumbs button{position:relative;padding:0;border:0;border-radius:8px;overflow:hidden;background:var(--line);aspect-ratio:16/10}
 .thumbs img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .thumbs button:hover img{transform:scale(1.05)}
+.thumbs[data-set="2019"] button{background:#fff;border:1px solid var(--line)}
+.thumbs[data-set="2019"] img{object-fit:contain}
 .thumbs[data-set="2017"]{grid-template-columns:repeat(6,1fr)}
+.thumbs[data-set="2017"] button{aspect-ratio:4/3}
 .thumbs[data-set="2017"] button:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;position:relative}
 .thumbs[data-set="2017"] button:first-child img{position:absolute;inset:0;object-position:center 40%}
-@media (max-width:520px){.thumbs[data-set="2017"]{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.thumbs{grid-template-columns:repeat(2,1fr)}.thumbs[data-set="2017"]{grid-template-columns:repeat(3,1fr)}}
 .thumbs em{position:absolute;left:5px;bottom:5px;background:rgba(10,20,36,.75);color:#fff;font-style:normal;font-family:var(--mono);font-size:11px;padding:2px 6px;border-radius:4px}
 .fbgrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px}
 .fbgrow div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:grid}
@@ -162,9 +165,9 @@ img{max-width:100%;display:block}
 .phones button:hover{transform:translateY(-4px)}
 .phones img{width:100%;height:auto}
 @media (max-width:520px){.phones{grid-template-columns:repeat(4,70%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.phones button{scroll-snap-align:start}}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:460px}
-.pair button{padding:0;border:0;border-radius:10px;overflow:hidden;background:var(--line);aspect-ratio:3/4}
-.pair img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pair button{padding:0;border:0;border-radius:10px;overflow:hidden;background:var(--line);aspect-ratio:4/3}
+.pair img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .3s}
 .pair button:hover img{transform:scale(1.04)}
 .photo-slot{aspect-ratio:16/9;max-width:460px;border:2px dashed var(--line);border-radius:12px;display:grid;place-content:center;justify-items:center;gap:8px;color:var(--ink-2);text-align:center;padding:16px}
 .m.now{border-color:var(--ink)}
