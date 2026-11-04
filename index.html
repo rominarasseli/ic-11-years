@@ -139,6 +139,10 @@ img{max-width:100%;display:block}
 .thumbs button{position:relative;padding:0;border:0;border-radius:8px;overflow:hidden;background:var(--line);aspect-ratio:4/3}
 .thumbs img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .thumbs button:hover img{transform:scale(1.05)}
+.thumbs[data-set="2017"]{grid-template-columns:repeat(6,1fr)}
+.thumbs[data-set="2017"] button:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;position:relative}
+.thumbs[data-set="2017"] button:first-child img{position:absolute;inset:0;object-position:center 40%}
+@media (max-width:520px){.thumbs[data-set="2017"]{grid-template-columns:repeat(3,1fr)}}
 .thumbs em{position:absolute;left:5px;bottom:5px;background:rgba(10,20,36,.75);color:#fff;font-style:normal;font-family:var(--mono);font-size:11px;padding:2px 6px;border-radius:4px}
 .fbgrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px}
 .fbgrow div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:grid}
@@ -490,7 +494,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
       <article class="m">
         <div class="stamp"><small>Entry</small><b>2017</b></div>
         <div class="m-body"><h3>Going global</h3>
-          <p>Our job offers reached farmers in South Africa, sheepherders in Mexico and truck drivers in Puerto Rico through local newspapers and magazines. We also held recruitment events in South Africa, meeting candidates face to face, with banners, brochures and IC caps ready on every table.</p>
+          <p>Our job offers reached farmers in South Africa, sheepherders in Mexico and truck drivers in Puerto Rico through local newspapers and magazines. We also held job fairs in Puerto Rico and recruitment events in South Africa, meeting candidates face to face, with banners, brochures and IC caps ready on every table.</p>
           <p>Long before design tools were easy to use and long before AI, this team designed everything by hand: application forms, PDF application templates, flyers, infographics and our yearly reports. We built a new online application system so every candidate lived in one place.</p>
           <div class="thumbs" data-set="2017"></div></div>
       </article>
@@ -706,15 +710,19 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-family:var(--mon
 <script>
 /* ---------------- DATA ---------------- */
 const PHOTOS=[
+ {f:"fair-pr-banner",c:"Job fairs",t:"Our job fair in Aguadilla, Puerto Rico, for truck drivers and construction helpers",y:"2017"},
+ {f:"fair-pr-talk",c:"Job fairs",t:"Presenting job offers to candidates at a job fair",y:"2017"},
+ {f:"fair-pr-interview",c:"Job fairs",t:"One-on-one interviews at a job fair",y:"2017"},
+ {f:"fair-presentation",c:"Job fairs",t:"Showing candidates where their new jobs would be",y:"2017"},
  {f:"session-1",c:"Information sessions",t:"Information session with candidates, 2017",y:"2017"},
  {f:"session-3",c:"Information sessions",t:"A full room listening to the job offers",y:"2017"},
- {f:"session-5",c:"Information sessions",t:"Presenting the process to candidates",y:"2017"},
+ {f:"session-5",c:"Information sessions",t:"Presenting the process to candidates"},
  {f:"session-2",c:"Information sessions",t:"Candidates at an information session"},
  {f:"session-4",c:"Information sessions",t:"Candidates at an information session"},
  {f:"session-6",c:"Information sessions",t:"Presenting at an information session"},
  {f:"session-7",c:"Information sessions",t:"Setting up before a session"},
- {f:"prep-room",c:"Behind the scenes",t:"The room ready before candidates arrived",y:"2017"},
- {f:"prep-caps",c:"Behind the scenes",t:"IC caps and lanyards for every candidate",y:"2017"},
+ {f:"prep-room",c:"Behind the scenes",t:"The room ready before candidates arrived"},
+ {f:"prep-caps",c:"Behind the scenes",t:"IC caps and lanyards for every candidate"},
  {f:"prep-table",c:"Behind the scenes",t:"Welcome table"},
  {f:"prep-banner",c:"Behind the scenes",t:"Our banner, ready for interviews"},
  {f:"prep-brochures",c:"Behind the scenes",t:"Brochures for candidates"},
